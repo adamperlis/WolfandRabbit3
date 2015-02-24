@@ -1,0 +1,180 @@
+<div id="libaryContainer" style="padding-top:50px;background:white">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-12 left-col">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding:50px;">
+        <span class="sidebar-heading">FILTERS</span>
+      </div>
+      <ul class="tags">
+        <li><a class="tag filter" data-filter="all" class="tag" href="#">
+
+          <span>All <i>18</i>
+          </span></a>
+        </li>
+        <li><a ng-click="filter('rock')" class="tag filter" data-filter=".category-1" href="#">
+
+          <span>Rock <i>38</i>
+          </span></a>
+        </li>
+        <li><a class="tag filter" data-filter=".category-2" href="#">
+
+          <span>Folk <i>74</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/art-and-photography">
+
+          <span>Hip Hop <i>161</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/blog">
+
+          <span>Country <i>68</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/craft">
+
+          <span>Alternative <i>10</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/culture">
+
+          <span>Soul <i>71</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/design-and-illustration">
+
+          <span>Classical <i>493</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/education">
+
+          <span>Pop <i>27</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/event">
+
+          <span>Electronic <i>75</i>
+          </span></a>
+        </li>
+
+        <li><a class="tag" href="/type/fashion">
+
+          <span>Ambient <i>97</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/food-drink">
+
+          <span>Orchestral <i>72</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/fundraising">
+
+          <span>Beats <i>3</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/inspiration-resource">
+
+          <span>Inspiring <i>56</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/magazine">
+
+          <span>Anthemic <i>47</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/motion">
+
+          <span>Angelic <i>49</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/music">
+
+          <span>Bouncy <i>46</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/news">
+
+          <span>Bright <i>4</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/online-store">
+
+          <span>Burdened <i>153</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/product">
+
+          <span>Driving <i>129</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/showcase">
+
+          <span>Playful <i>521</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/sport">
+
+          <span>Whimsical <i>6</i>
+          </span></a>
+        </li>
+        <li><a class="tag" href="/type/travel">
+
+          <span>Calm <i>19</i>
+          </span></a>
+        </li>  
+      </ul>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-12 container list">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-bottom: 54px;">
+        <span class="sidebar-heading">LIBRARY</span>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
+      </div>
+      <div class="col-sm-12 col-xs-12 library-sections" style="display: inline-block;padding-bottom: 10px;">
+        <div class="col-sm-1 col-xs-1"></div>
+        <div class="col-sm-5 col-xs-5"><p>Track Title</p></div>
+        <div class="col-sm-3 col-xs-3"><p>Genre</p></div>
+        <div class="col-sm-2 col-xs-2"><p>Duration</p></div>
+        <div class="col-sm-1 col-xs-1"></i></div>
+      </div>
+      <div ng-repeat='track in tracks | filter:filtered' class="col-sm-12 mix category-1" style="display: inline-block;">
+        <div class="col-sm-1 col-xs-1 tracks">
+          <i class="entypo-right-dir"></i>
+        </div>
+        <div class="col-sm-5 col-xs-5 tracks"><p>{{ track.title }}</p></div>
+        <div class="col-sm-3 col-xs-3 tracks"><span ng-repeat="tag in track.tags">{{ tag }} </span></div>
+        <div class="col-sm-2 col-xs-2 tracks"><p>1:23</p></div>
+        <div class="col-sm-1 col-xs-1 tracks"><i class="entypo-down-circled" id="download"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 
+<div id="footer" class="">
+    <nav class="navbar navbar-default navbar-fixed-bottom" id="audioplayer">
+        <div class="navbar-inner navbar-content-center">
+            <audio id="music" preload="true" onloadstart='updateTrackTime(this);' ontimeupdate='updateTrackTime(this);'>
+              <source src="http://www.alexkatz.me/codepen/music/interlude.mp3">
+              <source src="http://www.alexkatz.me/codepen/music/interlude.ogg">
+            </audio>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 navbar-left">
+            <i class="entypo-play" id="pButton" class="play" onclick="play()"></i>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 player">
+              <p>Track Title 3<span> -Artist</span><br><small id="currentTime"></small><small> of </small><small id="duration"></small></p>
+              <div id="timeline">    
+                    <div id="playhead"></div>
+                    <div id="playbar"></div>
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 navbar-right player">
+             <i class="entypo-basket" id="cart"></i>
+            </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <p style="padding-top:17px"><i class="entypo-flash"></i> Made in <strong>Brooklyn</strong></p>
+            </div>
+        </div>
+    </nav> -->
+</div>

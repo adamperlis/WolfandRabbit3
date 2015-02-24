@@ -1,0 +1,79 @@
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" role="navigation">
+    <div class="container">
+      <div class="navbar-header" style="padding-top:10px">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <a class="navbar-brand" href="#top"><div class="logo"></div></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse" style="padding-top:11px">
+        <ul class="nav navbar-nav nav-menu-items">
+          <li id="featured-btn"><a href="#">Featured Work</a></li>
+          <li><a href="#libaryContainer">Library</a></li>
+          <li><a scroll-to="about">About</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+        <!-- <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
+      </div>
+    </div><!--/.navbar-collapse -->
+  </nav>
+
+  <!-- Intro to AdWorks 3 -->
+<!--   <div class="modal fade" ng-repeat='video in videos | limitTo : 6' id="Intro3" tabindex="-1" role="dialog" aria-labelledby="Intro3" aria-hidden="true">
+    <div class="modal-dialog">    
+          <iframe src="{{ video.url }}" width="600" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </div>  -->
+  
+  <div class="bg img-responsive"></div>
+  <div class="row">
+    <div class="jumbotron">
+      <div class="row">
+        
+        <div class="black-overlay"></div>
+        <div class="col-md-12">
+          <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-lg-2 col-md-2 col-sm-4 col-xs-12">
+            <div id="logo" class="img-responsive animated fadeInUp"></div>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <a ui-sref='library' id="heroBtn" class="text-center button animated fadeInUp"><span>BROWSE LIBRARY</span></a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="row" id="featured" style="padding-bottom:110px;background:white">
+    <div class="subheading text-center" style="padding:50px;background:white">FEATURED WORK</div>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-4" style="padding-top: 20px;" ng-repeat='video in videos | limitTo : 6'>
+  				<div class="grid" data-toggle="modal" data-target="#Intro3">
+  					<figure class="effect-romeo">
+  					<img ng-click='video.view()' class="img-responsive" src="{{ video.thumbnails.large }}"/>
+  	    <!-- Button trigger modal -->
+  					</figure>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="bg-2 img-responsive"></div>
+  <div class="row" id="about">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">            
+        <p class="about heading text-center">Wolf & Rabbit is a Brooklyn, NY based creative audio studio. We compose and license music for commercials, film, corporate videos and other projects. Our talented team will work with you to create story driven music that evokes emotion and drives results.</p>
+      </div>
+    <div class="jumbotron jumbotron2">
+    </div>
+  </div>

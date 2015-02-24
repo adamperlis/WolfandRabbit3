@@ -1,0 +1,170 @@
+@-webkit-keyframes slide-up {
+    0% { transform: translateY(100%) }
+    100% { transform: translateY(0) }
+}
+
+@keyframes slide-up {
+    0% { transform: translateY(100%) }
+    100% { transform: translateY(0) }
+}
+
+@-webkit-keyframes scale-up {
+    0% { transform: scale(.8, .8) }
+    100% { transform: scale(1,1) }
+}
+
+@keyframes scale-up {
+    0% { transform: scale(.8, .8) }
+    100% { transform: scale(1,1) }
+}
+
+body.active-modal {
+    
+}
+
+body.active-modal {
+    overflow: hidden;
+}
+
+.modal {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    text-align: center;
+
+    &:after {
+        content: " ";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+
+    }
+
+    .meta {
+        margin: 4px 0;
+
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &.current-remove,
+    &.current-add,
+    .modal__backdrop,
+    .modal__dialog {
+        display: block;
+    }
+
+    .modal__dialog {
+        vertical-align: middle;
+        text-align: left;
+        max-height: 100%;
+        overflow-y: scroll;
+    }
+
+    .modal__backdrop {
+        opacity: 0;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        background: rgba(33, 45, 56, 1);
+        z-index: -1;
+    }
+
+    &.current-add-active,
+    &.current {
+        display: block;
+        top: 0;
+        opacity: 1;
+
+        .modal__backdrop {
+            opacity: .8;
+        }
+    }
+
+    &.current-add {
+        .modal__dialog {
+            
+        }
+    }
+
+    &.current-add-active {
+        .modal__dialog {
+            
+        }
+    }
+
+    &.current-remove-active {
+        opacity: 0;
+
+        .modal__dialog {
+        }
+    }
+
+    .modal__dialog {
+        width: 430px;
+        box-sizing: content-box;
+        display: inline-block;
+        -webkit-animation-duration: .25s;
+        -webkit-animation-name: scale-up;
+        animation-duration: .25s;
+        animation-name: scale-up;
+        overflow: scroll;
+        
+        .modal__header {
+            border-bottom: 1px #ebe9e7 solid;
+            padding: 40px;
+            padding-bottom: 0;
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .modal__body {
+            padding: 40px;
+            padding-top: 0;
+
+        }
+
+        .modal-body__meta {
+            margin: 10px 0;
+
+        }
+
+
+        .modal__content {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+
+            &.error {
+                position: relative;
+                height: inherit;
+                background: #fff;
+                padding: 0;
+                top: inherit;
+                color: inherit;
+                -webkit-animation: shake .5s linear;
+                left: initial;
+
+                p {
+                    line-height: 1.5;
+                }
+            }
+            
+        }
+
+        .modal__content--pan {
+            .modal__header,
+            .modal__body, {
+                padding: 0;
+            }
+        }
+
+    }
+}

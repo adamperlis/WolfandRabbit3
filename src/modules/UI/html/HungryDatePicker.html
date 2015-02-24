@@ -1,0 +1,17 @@
+<div class="modal__content modal__content--pan" ng-class="{'error': error}">
+    <div class="modal__body hungry-calendar">
+        <div class="calendar-header">
+            <span class="prev" ng-if=" ! disablePrev" ng-class="{ 'disabled' : disablePrev }" ng-click="go(-1, 'month')"><i class="icon icon--left-arrow"></i></span>
+            <span class="next" ng-click="go(+1, 'month')"><i class="icon icon--arrow-right"></i></span>
+            <span class="month">{{ current.format('MMMM') }}</span>
+        </div>
+        <table>
+            <tbody>
+                <tr ng-repeat="week in weeks">
+                    <td ng-repeat="day in week" ng-class="{ 'disabled' : !disabled(day), 'current' : day.format('MMDDYY') == currentDate.format('MMDDYY'), 'secondary' : day.format('MMYY') != current.format('MMYY') }" ng-click="select(day)">{{ day.date() }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
