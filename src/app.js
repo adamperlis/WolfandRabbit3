@@ -30,6 +30,13 @@ angular.module("wolfandrabbit2", [
 .factory('Video', ['$sce', 'Modals', require('./factories/Video.js')])
 .factory('Track', [ require('./factories/Track.js')])
 
+.directive('state', ['$rootScope', '$state', '$animate', '$timeout', require('./directives/state.js')])
+.directive('parallax', ['$timeout', 'Scroller', require('./directives/Parallax.js')])
+.directive('sticky', ['Scroller', require('./directives/navbar.js')])
+.directive('invert', ['Scroller', require('./directives/invert.js')])
+.directive('remove', ['Scroller', require('./directives/removeBg2.js')])
+
+
 angular.bootstrap(document, ["wolfandrabbit2"]);
 
 //Put your damn google analytics number here 

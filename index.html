@@ -15,8 +15,30 @@
 	 
 	</head>
 
-	<body>
-		<div class='view' ui-view='default'></div>
+	<body state>
+
+		<nav sticky class="navbar navbar-fixed-top" id="navbar" role="navigation" ng-class="{ 'back': back }">
+	    <div class="container">
+	      <div class="navbar-header" style="padding-top:10px">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	      <div class="navbar-brand" ui-sref="home"><div invert class="logo"></div></div>
+	      </div>
+	      <div id="navbar" class="navbar-collapse collapse" style="padding-top:11px">
+	        <ul class="nav navbar-nav nav-menu-items">
+	          <li id="featured-btn"><a scroll-to="featured">Featured Work</a></li>
+	          <li><a href="#libaryContainer" ui-sref="library">Library</a></li>
+	          <li><a scroll-to="about">About</a></li>
+	        </ul>
+	        <form class="navbar-form navbar-right" role="search">
+	      </div>
+	    </div><!--/.navbar-collapse -->
+	  	</nav>
+
+		<div class='view' ui-view='default' ng-class="{ 'back': back }"></div>
 		<script src="dist/app.js"></script>
 	</body>
 

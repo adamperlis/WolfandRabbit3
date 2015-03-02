@@ -1,4 +1,5 @@
 @import (inline) "http://weloveiconfonts.com/api/?family=entypo";
+@import 'library.less';
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -197,6 +198,9 @@ hr {
 .tag:hover:before {
     border-right-color: #9d15e0;
 }
+.tag:focus:before {
+    border-right: 6px solid #9d15e0;
+}
 .tags.alt .tag {
     background-color: #6ddbff;
 }
@@ -219,12 +223,29 @@ hr {
 	width: 100px;
 }
 
-.logo-inverse{
+.logoInverse{
 	background-image:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2018.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%20184.5%2078%22%20enable-background%3D%22new%200%200%20184.5%2078%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%2029.984%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2235.3089%22%3EWOL%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%2029.984%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2235.3089%22%3EWOL%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%20111.193%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2235.3089%22%20letter-spacing%3D%221%22%3EF%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%20111.193%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2235.3089%22%20letter-spacing%3D%221%22%3EF%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%20131.4616%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2220.1765%22%3E%26amp%3B%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%20131.4616%2036.5608%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2220.1765%22%3E%26amp%3B%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%2029.984%2075.9397%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2239%22%3ERABBIT%3C%2Ftext%3E%0D%0A%3Ctext%20transform%3D%22matrix%281%200%200%201%2029.984%2075.9397%29%22%20fill%3D%22%231C1C1C%22%20font-family%3D%22%27Futura-Oblique%27%22%20font-size%3D%2239%22%3ERABBIT%3C%2Ftext%3E%0D%0A%3C%2Fsvg%3E%0D%0A');
 	background-size: 80px;
 	background-repeat: no-repeat;
 	height: 100px;
 	width: 100px;
+}
+
+.navbar-brand:hover{
+	opacity:1;
+	transition:.5s all;
+}
+
+.navbar-brand:hover{
+	opacity:.5;
+	cursor: pointer;
+}
+
+.navbar{
+	margin-bottom:0 !important;
+	border-bottom: 0px solid rgb(242, 242, 242) !important;
+	padding-bottom: 11px;
+	z-index: 99999999;
 }
 
 .navbar-brand .logo{
@@ -234,7 +255,8 @@ hr {
 
 .navbar-inverse {
 	border-bottom: none;
-	background: none;
+	background: white;
+	border-bottom: 1px solid #f2f2f2 !important;
 }
 
 .navbar-toggle {
@@ -250,8 +272,8 @@ hr {
 	border-radius: 0px; 
 }
 
-.navbar-inverse .navbar-nav>li>a {
-	color: white;
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
@@ -590,18 +612,18 @@ iframe{
 
 .bg {
 	background: url('http://static.pexels.com/wp-content/uploads/2014/06/disc-jockey-dj-man-1534.jpg') no-repeat left center;
-	width: 100%;
+	width: 90%;
 	height: 780px;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: -2;
 	background-size: 1440px;
 	background-position: 0 0px;
 	background-size: cover;
-	-ms-transform: scale(1.25); /* IE 9 */
-    -webkit-transform: scale(1.25); /* Chrome, Safari, Opera */
-    transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	transform: scale(1.25);
 }
 
 .bg-2{
@@ -610,16 +632,15 @@ iframe{
 	height: 780px;
 	position: fixed;
 	opacity: .25;
-	top: 0;
 	left: 0;
+	top: -20px;
 	z-index: -1;
-	display:none;
 	background-size: 100%;
-	background-position: 0 80px;
-	-ms-transform: scale(1.25); /* IE 9 */
-    -webkit-transform: scale(1.25); /* Chrome, Safari, Opera */
-    transform: scale(1.25);
-	background-color: linear-gradient(220deg, rgb(255, 255, 255) 0%, rgb(135, 213, 255) 53%);
+  	background-position: 0px 120px;
+	-ms-transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	transform: scale(1.25);
+	display: none;
 }
 
 .jumbotron {
@@ -636,29 +657,11 @@ iframe{
   bottom:0;
   margin: 0 auto;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyMzFweCIgaGVpZ2h0PSIyNjYuMDk5cHgiIHZpZXdCb3g9IjAgMCAyMzEgMjY2LjA5OSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjMxIDI2Ni4wOTkiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSI1Ny41LDE1Mi44MTggNjMuNSwxMzMuODE4IDQ0LjY2NywxMjEuMDU0IDQxLjM5NywxMDQuMzE4IDkzLDgzLjMxOCAxMDguMDc3LDU2LjIyMiAxMjMuNSw4Mi4xMDUgMTIzLjUsMTUyLjgxOCAxMTcuNTMyLDE2NS4wMiAxMTIuMjM4LDE1Mi44MTggMTA0LjUyNiwxNjUuMDIgOTguOTYyLDE1Mi44MTggOTIuMTA0LDE2NS4wMiA4Ni40NiwxNTIuODE4IDgwLjA3OSwxNjUuMDIgNzMuMDUsMTUyLjQ1NyA2NC43NjUsMTY1LjAyICIvPjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSI5Mi42NTMsOTAuMTQ2IDgyLjEwMSw5Ni4xNzYgOTIuNjUzLDEwMi4yMDYgMTAyLjcwNCw5Ni4xNzYgIi8+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIxMDIuNzA0LDgxLjYwMyAxMDguMjMxLDcyLjU1OCAxMTMuNzU5LDgxLjYwMyAiLz48Y2lyY2xlIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBjeD0iOTIuNjU2IiBjeT0iOTYuNDQiIHI9IjMuMDA3Ii8+PHBvbHlnb24gZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50cz0iNDUuNDcsMTIyLjE2NCA1OS45OSw5Ny4zMTggNDEsMTAzLjMxOCAiLz48Zz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iNjYuNSIgeTE9IjE0MS4wOTkiIHgyPSI2Ni41IiB5Mj0iMTQ3LjA5OSIvPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSI3MC41IiB5MT0iMTM0LjA5OSIgeDI9IjcwLjUiIHkyPSIxNDAuMDk5Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9Ijc1LjUiIHkxPSIxNDEuMDk5IiB4Mj0iNzUuNSIgeTI9IjE0Ny4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iOTYuNSIgeTE9IjE0MS4wOTkiIHgyPSI5Ni41IiB5Mj0iMTQ3LjA5OSIvPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSIxMDEuNSIgeTE9IjEzNC4wOTkiIHgyPSIxMDEuNSIgeTI9IjE0MC4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMTA2LjUiIHkxPSIxNDEuMDk5IiB4Mj0iMTA2LjUiIHkyPSIxNDcuMDk5Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjkxLjUiIHkxPSIxNDAuMDk5IiB4Mj0iOTEuNSIgeTI9IjEzNC4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iODYuNSIgeTE9IjE0Ny4wOTkiIHgyPSI4Ni41IiB5Mj0iMTQxLjA5OSIvPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSIxMTIuNSIgeTE9IjEzNC4wOTkiIHgyPSIxMTIuNSIgeTI9IjE0MC4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMTE3LjUiIHkxPSIxNDcuMDk5IiB4Mj0iMTE3LjUiIHkyPSIxNDEuMDk5Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjgxLjUiIHkxPSIxNDAuMDk5IiB4Mj0iODEuNSIgeTI9IjEzNC4wOTkiLz48L2c+PC9nPjxnPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTE3My41LDExOS4wNjhsOS44ODMsMC4wNzNsNS4xMTctNS44MjN2LTE5bC00MC0yMWMwLDAsMi4wMy0xMy41ODcsMi4zMzctMjguMjM1YzAuNDEzLTE5LjczNi0yNy42NjQtMzAuODYxLTI3LjY2NC0zMC44NjFzMy4wNzgsMTQuNjE2LDIuMzI3LDMzLjg3N2MtMS4wMjQsMjYuMjUsMTAsMjUuMDA3LDEwLDI1LjAwN2wtMSw3OS43MTNsNi4yMTgsMTIuMjAxbDUuNDE4LTEyLjIwMWw3Ljc3NCwxMi4yMDFsNS41OTUtMTIuMjAxbDYuODc0LDEyLjIwMWw1LjY1MS0xMi4yMDFMMTczLjUsMTE5LjA2OHoiLz48cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50cz0iMTY1Ljg0Nyw5MC4xNDYgMTc2LjM5OSw5Ni4xNzYgMTY1Ljg0NywxMDIuMjA2IDE1NS43OTYsOTYuMTc2ICIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTEzMSw0NC44MThjMC41MzEtMTAuNzIyLTAuNTI0LTIwLjQ3Mi0wLjUyNC0yMC40NzJjMC4wMDEsMCwxNC40NzYsOS4yNDQsMTQuNTI0LDIyLjA5NmMwLjA0NCwxMS42NTYtMy43NjIsMjEuOTA2LTMuNzYyLDIxLjkwNlMxMjkuOTE3LDY2LjY4MywxMzEsNDQuODE4eiIvPjxjaXJjbGUgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGN4PSIxNjUuODQ0IiBjeT0iOTYuNDQiIHI9IjMuMDA3Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMTgzLjciIHkxPSI5Mi4zODUiIHgyPSIxODguNSIgeTI9Ijk4LjQ0MSIvPjxnPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSIxNDAuNSIgeTE9IjE0MS4wOTkiIHgyPSIxNDAuNSIgeTI9IjE0Ny4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMTQ1LjUiIHkxPSIxMzQuMDk5IiB4Mj0iMTQ1LjUiIHkyPSIxNDAuMDk5Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjE1MC41IiB5MT0iMTQxLjA5OSIgeDI9IjE1MC41IiB5Mj0iMTQ3LjA5OSIvPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSIxNjYuNSIgeTE9IjE0MC4wOTkiIHgyPSIxNjYuNSIgeTI9IjEzNC4wOTkiLz48bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMTYxLjUiIHkxPSIxNDcuMDk5IiB4Mj0iMTYxLjUiIHkyPSIxNDEuMDk5Ii8+PGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjE1Ni41IiB5MT0iMTQwLjA5OSIgeDI9IjE1Ni41IiB5Mj0iMTM0LjA5OSIvPjwvZz48L2c+PHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSA1NS4zMzUgMjAyLjY3OTcpIj48dHNwYW4geD0iMCIgeT0iMCIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRkZGRkZGIiBmb250LWZhbWlseT0iJ0Z1dHVyYS1PYmxpcXVlJyIgZm9udC1zaXplPSIzNS4zMDg5Ij5XT0w8L3RzcGFuPjx0c3BhbiB4PSI4MS4yMDkiIHk9IjAiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgZm9udC1mYW1pbHk9IidGdXR1cmEtT2JsaXF1ZSciIGZvbnQtc2l6ZT0iMzUuMzA4OSIgbGV0dGVyLXNwYWNpbmc9IjMiPkY8L3RzcGFuPjx0c3BhbiB4PSIxMDEuNDc3IiB5PSIwIiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSInRnV0dXJhLU9ibGlxdWUnIiBmb250LXNpemU9IjIwLjE3NjUiPiZhbXA7PC90c3Bhbj48dHNwYW4geD0iMCIgeT0iMzkuMzc5IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIGZvbnQtZmFtaWx5PSInRnV0dXJhLU9ibGlxdWUnIiBmb250LXNpemU9IjM5Ij5SQUJCSVQ8L3RzcGFuPjwvdGV4dD48L3N2Zz4=);
-
   z-index: 100000;
   position: absolute;
   background-repeat: no-repeat;
   height: 250px;
   margin-top: 50%;
-}
-
-
-.bg {
-	background: url('http://static.pexels.com/wp-content/uploads/2014/06/disc-jockey-dj-man-1534.jpg') no-repeat left center;
-	width: 100%;
-	height: 780px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	background-size: 1440px;
-	background-position: 0 0px;
-	background-size: cover;
-	-ms-transform: scale(1.25); /* IE 9 */
-    -webkit-transform: scale(1.25); /* Chrome, Safari, Opera */
-    transform: scale(1.25);
 }
 
 .jumbotron2 {
@@ -950,7 +953,7 @@ figure.effect-romeo:hover p {
 }
 
 .navbar-inverse .navbar-toggle:hover {
-	color: white;
+	color: lightGrey;
 	background:none;
 	transform: scale(1.25);
 }
@@ -967,8 +970,8 @@ figure.effect-romeo:hover p {
 }
 
 .navbar-nav>.active>a {
-color: #fff;
-background-color: rgba(0,0,0,0) !important;
+	color: #fff;
+	background-color: rgba(0,0,0,0) !important;
 }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
@@ -987,37 +990,112 @@ text-shadow: none;
 	margin-right: -29px;
 }
 
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0) !important;
+  cursor:pointer;
+}
+
 .view {
 	position: absolute;
 	width: 100%;
+	transition:all 1s;
 
 	&.ng-enter,
 	&.ng-leave {
-		-webkit-transition:all .2s ease-in-out;
-    	-moz-transition:all .2s ease-in-out;
-    	-o-transition:all .2s ease-in-out;
-    	transition:all .2s ease-in-out;	
+		
 	}
 
 	&.ng-enter {
-		opacity: 0;
+		-webkit-transition-property: -webkit-transform, opacity;
+	    -moz-transition-property: -moz-transform, opacity;
+	    -o-transition-property: -o-transform, opacity;
+	    transition-property: transform, opacity;
+	    -webkit-transition: cubic-bezier(.55,0,.1,1) all;
+   		transition: cubic-bezier(.55,0,.1,1) all;
+	    -webkit-transition-duration: 1s;
+	    -moz-transition-duration: 1s;
+	    -o-transition-duration: 1s;
+	    transition-duration: 1s;
+	    z-index: 3;
+	    position: absolute;
 	}
 
 	&.ng-leave {
-		opacity: 1;
+		-webkit-transition-property: -webkit-transform, opacity;
+	    -moz-transition-property: -moz-transform, opacity;
+	    -o-transition-property: -o-transform, opacity;
+	    transition-property: transform, opacity;
+	    -webkit-transition: cubic-bezier(.55,0,.1,1) all;
+   		transition: cubic-bezier(.55,0,.1,1) all;
+	    -webkit-transition-duration: 1s;
+	    -moz-transition-duration: 1s;
+	    -o-transition-duration: 1s;
+	    transition-duration: 1s;
+	    z-index: 1;
+	    position: absolute;
 	}
 
 	&.ng-leave-active {
-		opacity: 0;
+	    position: absolute;
 	}
 
 	&.ng-enter-active {
-		opacity: 1;
 	}
 
 }
 
+.animate-repeat {
+    -webkit-transition: .5s cubic-bezier(.55,0,.1,1) all;
+    transition: .5s cubic-bezier(.55,0,.1,1) all;
+}
 
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    -webkit-transition:all cubic-bezier(.55,0,.1,1) 0.2s;
+    transition:all cubic-bezier(.55,0,.1,1) 0.2s;
+}
 
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity:0;
+    max-height:0;
+}
 
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+    max-height:40px;
+}
+
+/**
+ * Stagger Leave (hide) animation
+ */
+.animate-repeat.ng-leave-stagger {
+    /* this will have a 100ms delay between each successive leave animation */
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+
+    /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+/**
+ * Stagger ENTER ANIMATION
+ */
+.animate-repeat.ng-enter-stagger {
+    /* this will have a 100ms delay between each successive enter animation */
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+
+    /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
 

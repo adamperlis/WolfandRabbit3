@@ -1,11 +1,11 @@
 @-webkit-keyframes slide-up {
-    0% { transform: translateY(100%) }
-    100% { transform: translateY(0) }
+    0% { transform: translateY(100%); opacity:0 }
+    100% { transform: translateY(0); opacity:1 }
 }
 
 @keyframes slide-up {
-    0% { transform: translateY(100%) }
-    100% { transform: translateY(0) }
+    0% { transform: translateY(100%); opacity:0 }
+    100% { transform: translateY(0); opacity:1 }
 }
 
 @-webkit-keyframes scale-up {
@@ -108,13 +108,15 @@ body.active-modal {
     }
 
     .modal__dialog {
-        width: 430px;
+        width: 600px;
         box-sizing: content-box;
         display: inline-block;
-        -webkit-animation-duration: .25s;
-        -webkit-animation-name: scale-up;
-        animation-duration: .25s;
-        animation-name: scale-up;
+        -webkit-transition: cubic-bezier(.55,0,.1,1) all;
+        transition: cubic-bezier(.55,0,.1,1) all;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-name: slide-up;
+        animation-duration: 1s;
+        animation-name: slide-up;
         overflow: scroll;
         
         .modal__header {

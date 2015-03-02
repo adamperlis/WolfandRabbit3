@@ -1,11 +1,11 @@
-<div id="libaryContainer" style="padding-top:50px;background:white">
+<div id="libaryContainer" style="padding-top:122px;background:white">
   <div class="row">
     <div class="col-md-3 col-sm-3 col-xs-12 left-col">
       <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding:50px;">
         <span class="sidebar-heading">FILTERS</span>
       </div>
       <ul class="tags">
-        <li><a class="tag filter" data-filter="all" class="tag" href="#">
+        <li><a ng-click="filter('')" class="tag filter" href="#">
 
           <span>All <i>18</i>
           </span></a>
@@ -15,108 +15,108 @@
           <span>Rock <i>38</i>
           </span></a>
         </li>
-        <li><a class="tag filter" data-filter=".category-2" href="#">
+        <li><a ng-click="filter('folk')" class="tag filter" data-filter=".category-2" href="#">
 
           <span>Folk <i>74</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/art-and-photography">
+        <li><a ng-click="filter('hip hop')" class="tag filter" href="#">
 
           <span>Hip Hop <i>161</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/blog">
+        <li><a ng-click="filter('country')" class="tag filter" href="#">
 
           <span>Country <i>68</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/craft">
+        <li><a ng-click="filter('alternative')" class="tag filter" href="#">
 
           <span>Alternative <i>10</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/culture">
+        <li><a ng-click="filter('soul')" class="tag filter" href="#">
 
           <span>Soul <i>71</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/design-and-illustration">
+        <li><a ng-click="filter('classical')" class="tag filter" href="#">
 
           <span>Classical <i>493</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/education">
+        <li><a ng-click="filter('pop')" class="tag filter" href="#">
 
           <span>Pop <i>27</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/event">
+        <li><a ng-click="filter('electronic')" class="tag filter" href="#">
 
           <span>Electronic <i>75</i>
           </span></a>
         </li>
 
-        <li><a class="tag" href="/type/fashion">
+        <li><a ng-click="filter('ambient')" class="tag filter" href="#">
 
           <span>Ambient <i>97</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/food-drink">
+        <li><a ng-click="filter('orchestral')" class="tag filter" href="#">
 
           <span>Orchestral <i>72</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/fundraising">
+        <li><a ng-click="filter('beats')" class="tag filter" href="#">
 
           <span>Beats <i>3</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/inspiration-resource">
+        <li><a ng-click="filter('inspiring')" class="tag filter" href="#">
 
           <span>Inspiring <i>56</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/magazine">
+        <li><a ng-click="filter('anthemic')" class="tag filter" href="#">
 
           <span>Anthemic <i>47</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/motion">
+        <li><a ng-click="filter('angelic')" class="tag filter" href="#">
 
           <span>Angelic <i>49</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/music">
+        <li><a ng-click="filter('bouncy')" class="tag filter" href="#">
 
           <span>Bouncy <i>46</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/news">
+        <li><a ng-click="filter('bright')" class="tag filter" href="#">
 
           <span>Bright <i>4</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/online-store">
+        <li><a ng-click="filter('burdened')" class="tag filter" href="#">
 
           <span>Burdened <i>153</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/product">
+        <li><a ng-click="filter('driving')" class="tag filter" href="#">
 
           <span>Driving <i>129</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/showcase">
+        <li><a ng-click="filter('playful')" class="tag filter" href="#">
 
           <span>Playful <i>521</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/sport">
+        <li><a ng-click="filter('whimsical')" class="tag filter" href="#">
 
           <span>Whimsical <i>6</i>
           </span></a>
         </li>
-        <li><a class="tag" href="/type/travel">
+        <li><a ng-click="filter('calm')" class="tag filter" href="#">
 
           <span>Calm <i>19</i>
           </span></a>
@@ -136,7 +136,7 @@
         <div class="col-sm-2 col-xs-2"><p>Duration</p></div>
         <div class="col-sm-1 col-xs-1"></i></div>
       </div>
-      <div ng-repeat='track in tracks | filter:filtered' class="col-sm-12 mix category-1" style="display: inline-block;">
+      <div ng-repeat="track in tracks | filter:filtered" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 col-xs-1 tracks">
           <i class="entypo-right-dir"></i>
         </div>
