@@ -1,0 +1,22 @@
+<div id="checkoutContainer" style="padding-top:122px;background:white">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 container list">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-bottom: 54px;">
+        <span class="sidebar-heading">checkout</span>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
+      </div>
+      <div class="col-sm-12 col-xs-12 checkout-sections" style="display: inline-block;padding-bottom: 10px;">
+        <div class="col-sm-5 col-xs-5"><p>Track Title</p></div>
+        <div class="col-sm-4 col-xs-4"><p>License</p></div>
+        <div class="col-sm-3 col-xs-3"><p>Cost</p></div>
+      </div>
+
+      <div ng-repeat="track in tracks | filter:filtered" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
+        <div class="col-sm-5 col-xs-5 tracks"><p>{{ track.title }}</p></div>
+        <div class="col-sm-4 col-xs-4 tracks"><p id="genre" ng-repeat="license in track.licenses">{{ license }}{{$last ? '' : ', '}} </p></div>
+        <div class="col-sm-3 col-xs-3 tracks"><p>$200</p></div>
+      </div>
+    </div>
+  </div>
+</div>

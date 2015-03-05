@@ -20,4 +20,14 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
 			}
 		}
 	})
+
+	$stateProvider.state('checkout', {
+		url: '/checkout',
+		views: {
+			'default': {
+				templateUrl: '../src/html/checkout.html',
+				controller: 'checkoutCtrl'
+			}
+		}
+	})
 }

@@ -6,7 +6,29 @@
 			"tags": [
 				"rock",
 				"uplifting"
-			]
+			],
+			"licenses": {
+				"independentFilmLicense": "Independent Film" 
+					{
+					"cost:": 200
+					},
+				"smallBusinessLicense": "Small Business"
+					{
+					"cost:": 200
+					},
+				"smallNonProfitLicense": "Small Non-Profit"
+					{
+					"cost:": 200
+					},
+				"weddingLicense": "Wedding"
+					{
+					"cost:": 200
+					},
+				"Custom": "Custom"
+					{
+					"cost:": "Contact Us"
+					}
+			}
 		},{
 			"title": "Track 2",
 			"duration": 200,

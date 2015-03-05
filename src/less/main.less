@@ -1,5 +1,6 @@
 @import (inline) "http://weloveiconfonts.com/api/?family=entypo";
 @import 'library.less';
+@import 'checkout.less';
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -357,6 +358,15 @@ border-color: transparent;
   }
 }
 
+.sidebar-heading {
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 /**
  * List Styles
  */
@@ -385,7 +395,6 @@ border-color: transparent;
 }
 
 .tracks {
-	color: white;
 	font-size: 12px;
 	font-family: "Lucida Grande", Verdana, sans-serif;
 	left: 0;
@@ -393,16 +402,64 @@ border-color: transparent;
 	top: 0;
 }
 
-.tracks i{
+#play{
 	color: rgb(221, 221, 221);
 	font-size: 24px;
 	top: 2px;
 	left: -16px;
-	position: absolute;
-	padding-left: 30px;
+	position: relative;
+	padding-left: 18px;
 	padding-right: 30px;
 	-webkit-transition: all 1s;
     transition: all 1s;
+}
+
+#lightboxIcon {
+  color: #dddddd;
+  font-size: 18px;
+  top: 8px;
+  left: 30px;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 20px;
+  -webkit-transition: all 1s;
+  transition: all .5s;
+}
+
+#lightboxIcon:hover {
+	color:black;
+}
+
+#downloadIcon {
+  color: #dddddd;
+  font-size: 18px;
+  top: 8px;
+  left: 30px;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 20px;
+  -webkit-transition: all 1s;
+  transition: all .5s;
+}
+
+#downloadIcon:hover {
+	color:black;
+}
+
+#cartIcon {
+  color: #dddddd;
+  font-size: 18px;
+  top: 8px;
+  left: 30px;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 20px;
+  -webkit-transition: all 1s;
+  transition: all .5s;
+}
+
+#cartIcon:hover {
+	color:black;
 }
 
 .tracks i:hover{
@@ -416,13 +473,8 @@ border-color: transparent;
 	color:black;
 }
 
-.tracks {
-	color: white;
-	font-size: 12px;
-	font-family: "Lucida Grande", Verdana, sans-serif;
-	left: 0;
-	position: relative;
-	top: 0;
+#genre {
+  display: inline;
 }
 
 #audioplayer{
@@ -569,34 +621,6 @@ border-color: transparent;
 	-webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
-}
-
-#download {
-	font-size: 17px;
-	top: 8px;
-	background: none;
-	opacity:1;
-	-webkit-transition: all 1s;
-    transition: all 1s;
-    -webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-}
-
-#cart {
-	font-size: 17px;
-	padding-top: 16px;
-	padding-bottom: 40px;
-	opacity:1;
-	-webkit-transition: all 1s;
-    transition: all 1s;
-    -webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-}
-
-#download:hover {
-	color:black;
 }
 
 .list {
@@ -756,6 +780,10 @@ iframe{
 }
 
 .library-sections p{
+	color:lightgray;
+}
+
+.checkout-sections p{
 	color:lightgray;
 }
 
