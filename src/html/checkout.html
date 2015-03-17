@@ -7,15 +7,37 @@
       <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
       </div>
       <div class="col-sm-12 col-xs-12 checkout-sections" style="display: inline-block;padding-bottom: 10px;">
-        <div class="col-sm-5 col-xs-5"><p>Track Title</p></div>
+        <div class="col-sm-4 col-xs-4"><p>Track Title</p></div>
+        <div class="col-sm-2 col-xs-2"><p>Artist</p></div>
         <div class="col-sm-4 col-xs-4"><p>License</p></div>
-        <div class="col-sm-3 col-xs-3"><p>Cost</p></div>
+        <div class="col-sm-2 col-xs-2"><p>Cost</p></div>
       </div>
 
-      <div ng-repeat="track in tracks | filter:filtered" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
-        <div class="col-sm-5 col-xs-5 tracks"><p>{{ track.title }}</p></div>
-        <div class="col-sm-4 col-xs-4 tracks"><p id="genre" ng-repeat="license in track.licenses">{{ license }}{{$last ? '' : ', '}} </p></div>
-        <div class="col-sm-3 col-xs-3 tracks"><p>$200</p></div>
+      <div ng-repeat="item in items" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
+        <div class="col-sm-4 col-xs-4 tracks"><p>{{ item.title }}</p></div>
+        <div class="col-sm-2 col-xs-2 tracks"><p>{{ item.artist }}</p></div>
+        <div class="col-sm-4 col-xs-4 tracks">
+            <select ng-options="license.type for license in item.licenses" class="form-control" ng-model="item.license">
+            </select>
+        </div>
+        <div class="col-sm-1 col-xs-1 tracks"><p>{{ item.license.cost }}</p></div>
+        <div class="col-sm-1 col-xs-1 tracks"><p><i ng-click="item.removeFromCart()" class="remove entypo-cancel"></i></p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 divider"></div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <h2 class="checkout">Subtotal</h2>
+                <h2 class="checkout">Taxes</h2>
+                <h2 class="checkout">Total</h2>
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-6">
+                <h2 class="checkout">$0</h2>
+                <h2 class="checkout">$0</h2>
+                <h2 class="checkout">$0</h2>
+            </div>
+            <div id="checkoutBtn" class="col-md-8 col-sm-8 col-xs-8 text-center button"><span>order</span></div>
+        </div>
       </div>
     </div>
   </div>

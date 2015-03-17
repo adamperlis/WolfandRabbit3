@@ -1,105 +1,323 @@
 {
 	"data": [{
-			"title": "Track 1",
+			"id": 0,
+         "title": "Track 1",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"rock",
 				"uplifting"
 			],
-			"licenses": {
-				"independentFilmLicense": "Independent Film" 
-					{
-					"cost:": 200
-					},
-				"smallBusinessLicense": "Small Business"
-					{
-					"cost:": 200
-					},
-				"smallNonProfitLicense": "Small Non-Profit"
-					{
-					"cost:": 200
-					},
-				"weddingLicense": "Wedding"
-					{
-					"cost:": 200
-					},
-				"Custom": "Custom"
-					{
+			"licenses": [
+				{
+					"type": "Independent Film",
+					"cost": 200
+				},
+				{
+					"type": "Small Business",
+					"cost": 300
+				},
+				{
+					"type": "Small Non-Profit",
+					"cost": 400
+				},
+				{
+					"type": "Wedding",
+					"cost": 500
+				},
+				{
+					"type": "Custom",
 					"cost:": "Contact Us"
-					}
-			}
+				}
+			]
 		},{
-			"title": "Track 2",
+			"id": 1,
+         "title": "Track 2",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"folk",
 				"burdened"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 3",
+			"id": 3,
+         "title": "Track 3",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"hip hop",
 				"bouncy"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 4",
+			"id": 4,
+         "title": "Track 4",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"soul",
 				"calm"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 5",
+			"id": 5,
+         "title": "Track 5",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"country",
 				"playful"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 6",
+			"id": 6,
+         "title": "Track 6",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"pop",
 				"angelic"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 7",
+			"id": 7,
+         "title": "Track 7",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"alternative",
 				"anthemic"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 8",
+			"id": 8,
+         "title": "Track 8",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"classical",
 				"electronic"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 9",
+			"id": 9,
+         "title": "Track 9",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"rock",
 				"beats"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		},{
-			"title": "Track 10",
+			"id": 10,
+         "title": "Track 10",
+         "artist": "Wolf & Rabbit Music",
 			"duration": 200,
 			"url": "",
 			"tags": [
 				"hip hop",
 				"electronic"
-			]
+			],
+         "licenses": [
+            {
+               "type": "Independent Film",
+               "cost": 200
+            },
+            {
+               "type": "Small Business",
+               "cost": 200
+            },
+            {
+               "type": "Small Non-Profit",
+               "cost": 200
+            },
+            {
+               "type": "Wedding",
+               "cost": 200
+            },
+            {
+               "type": "Custom",
+               "cost:": "Contact Us"
+            }
+         ]
 		}]
 }
