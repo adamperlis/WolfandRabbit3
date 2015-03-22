@@ -4,12 +4,17 @@
       <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding:50px;">
         <span class="sidebar-heading">FILTERS</span>
       </div>
+
+      <div class="col-lg-12" style="padding-bottom:20px">
+        <input type="text" class="form-control" ng-model="search.$" placeholder="Search Tracks">
+      </div>
+
       <ul class="tags">
         <li><a ng-click="filter('')" class="tag filter" href="#"><span>All</span></a>
         </li>
-        <li><a ng-click="filter('rock')" class="tag filter" data-filter=".category-1" href="#"><span>Rock</span></a>
+        <li><a ng-click="filter('rock')" class="tag filter" href="#"><span>Rock</span></a>
         </li>
-        <li><a ng-click="filter('folk')" class="tag filter" data-filter=".category-2" href="#"><span>Folk</span></a>
+        <li><a ng-click="filter('folk')" class="tag filter" href="#"><span>Folk</span></a>
         </li>
         <li><a ng-click="filter('hip hop')" class="tag filter" href="#"><span>Hip Hop</span></a>
         </li>
@@ -54,6 +59,8 @@
       </ul>
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12 container list">
+      <i ng-class="{'addedToCart':animation.fadeInUpOut}" class="entypo-check"></i>
+      
       <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-bottom: 54px;">
         <span class="sidebar-heading">LIBRARY</span>
       </div>
@@ -67,14 +74,14 @@
         <div class="col-sm-2 col-xs-2 hidden-xs"></div>
       </div>
 
-      <div ng-repeat="track in tracks | filter:filtered" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
+      <div ng-repeat="track in tracks | filter:filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 hidden-xs tracks">
           <i id="play" class="entypo-right-dir"></i>
         </div>
         <div class="col-sm-5 col-xs-5 tracks"><p>{{ track.title }}</p></div>
         <div class="col-sm-3 col-xs-5 tracks"><p id="genre" ng-repeat="tag in track.tags">{{ tag }}{{$last ? '' : ', '}} </p></div>
         <div class="col-sm-1 col-xs-2 tracks"><p>1:23</p></div>
-        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><i class="entypo-plus" id="lightboxIcon"></i><i class="entypo-down-circled" id="downloadIcon"></i><i ng-click="track.addToCart()" class="entypo-basket" id="cartIcon"></i></div>
+        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><i class="entypo-plus" id="lightboxIcon"></i><i class="entypo-down-circled" id="downloadIcon"></i><i ng-click="fadeInUpOut(); track.addToCart();" class="entypo-basket" id="cartIcon"></i></div>
       </div>
     </div>
   </div>

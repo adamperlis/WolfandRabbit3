@@ -22,12 +22,13 @@ angular.module("wolfandrabbit2", [
 
 .controller('homeCtrl', ['$scope', '$state', '$resource', 'Videos', require('./controllers/homeCtrl.js')])
 .controller('aboutCtrl', ['$scope', '$state', require('./controllers/aboutCtrl.js')])
-.controller('libCtrl', ['$scope', '$state', 'Tracks', require('./controllers/libCtrl.js')])
+.controller('libCtrl', ['$scope', '$state', 'Tracks', '$timeout', require('./controllers/libCtrl.js')])
 .controller('checkoutCtrl', ['$scope', '$state', 'Tracks', require('./controllers/checkoutCtrl.js')])
 
 .service('Videos', ['$resource', '$q', 'Video', require('./services/Videos.js')])
 .service('Tracks', ['$resource', '$q', 'Track', require('./services/Tracks.js')])
 .service('Cart', ['$rootScope', require('./services/Cart.js')])
+.service('Stripe', ['$rootScope', 'Modals', require('./services/Stripe.js')])
 
 .factory('Video', ['$sce', 'Modals', require('./factories/Video.js')])
 .factory('Track', ['Cart', '$filter', require('./factories/Track.js')])
@@ -36,6 +37,7 @@ angular.module("wolfandrabbit2", [
 .directive('parallax', ['$timeout', 'Scroller', require('./directives/Parallax.js')])
 .directive('sticky', ['Scroller', require('./directives/navbar.js')])
 .directive('remove', ['Scroller', require('./directives/removeBg2.js')])
+
 
 
 angular.bootstrap(document, ["wolfandrabbit2"]);

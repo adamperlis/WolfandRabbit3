@@ -48,15 +48,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -80,15 +80,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -112,15 +112,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -144,15 +144,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -176,15 +176,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -208,15 +208,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -240,15 +240,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -272,15 +272,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",
@@ -304,15 +304,15 @@
             },
             {
                "type": "Small Business",
-               "cost": 200
+               "cost": 300
             },
             {
                "type": "Small Non-Profit",
-               "cost": 200
+               "cost": 400
             },
             {
                "type": "Wedding",
-               "cost": 200
+               "cost": 500
             },
             {
                "type": "Custom",

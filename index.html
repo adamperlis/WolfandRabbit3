@@ -13,7 +13,7 @@
 	<!-- <link rel="stylesheet" href="dist/less/bootstrap.css"> -->
 	<link rel="stylesheet" href="dist/less/wolfandrabbit.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
-
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 
 <body state>
@@ -36,7 +36,7 @@
 				</ul>
 				<ul class="navbar-right" style="padding-top:11px">
 					<li ui-sref="checkout" class="cart">
-						<i class="entypo-basket"></i><span class="badge">{{ items.length }}</span>
+						<i class="entypo-basket"></i><span class="badge">{{ cart.items.length }}</span>
 					</li>
 				</ul>
 				</div>
@@ -45,6 +45,7 @@
 
 		<div class='view' ui-view='default' ng-class="{ 'back': back }"></div>
 		<script src="dist/app.js"></script>
+		
 	</body>
 
 

@@ -2,13 +2,9 @@
   <div class="row">
     <div class="jumbotron">
       <div class="row">
-        
         <div class="black-overlay"></div>
-        <div class="col-md-12">
-          <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-lg-2 col-md-2 col-sm-4 col-xs-12">
-            <div id="logo" class="img-responsive animated fadeInUp"></div>
-          </div>
-          <div class="col-md-5"></div>
+        <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-4 col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div id="logo" class="img-responsive animated fadeInUp"></div>
         </div>
       </div>
       <div class="row">
@@ -25,7 +21,7 @@
   	<div class="container">
   		<div class="row">
   			<div class="col-md-4" style="padding-top: 20px;" ng-repeat='video in videos | limitTo : 6'>
-  				<div class="grid" data-toggle="modal" data-target="#Intro3">
+  				<div class="grid" data-toggle="modal">
   					<figure class="effect-romeo">
   					<img ng-click='video.view()' class="img-responsive" src="{{ video.thumbnails.large }}"/>
   	    <!-- Button trigger modal -->
