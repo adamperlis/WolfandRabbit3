@@ -31,9 +31,9 @@ module.exports = function($rootScope) {
 			}
 		};
 
-
-
 		$rootScope.cart.items.push(item);
+
+		$rootScope.$broadcast("itemAddedToCart")
 
 		updateTotals()
 	}

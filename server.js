@@ -13,5 +13,5 @@ app.get('*', function(req, res) {
 });
 
 app.listen(80, function() {
-	console.log("server started bitches");
+	console.log("server started");
 });

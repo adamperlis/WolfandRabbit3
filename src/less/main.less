@@ -1212,19 +1212,17 @@ text-shadow: none;
 
 .divider{
 	border-top: 1px solid #DBDBDB;
-  	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .tag {
   display:none;
 }
 
-.addedToCart {
+.addToCart {
   font-size: 56px;
   color: rgb(187, 82, 239);
   z-index: 10000000000;
-  -webkit-animation: fadeInUpOut 1s forwards; /* Chrome, Safari, Opera */
-  animation: fadeInUpOut 1s forwards;
   position: absolute;
   top: 0;
   left: 0;
@@ -1238,6 +1236,29 @@ text-shadow: none;
   text-align: center;
   padding-top:5px;
   border-radius: 5px;
+  opacity:0;
+  -webkit-transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, 50%, 0);
+
+  &.added-add {
+    transition:1s;    
+  }
+
+  &.added {
+    opacity:.5;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  &.added-remove {
+    transition: 1s;
+  }
+
+  &.added-remove-active {
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+  }
+
 }
 
 .view {
@@ -1345,7 +1366,6 @@ text-shadow: none;
 
 @-webkit-keyframes fadeInUpOut {
   0% {
-    opacity: 0;
     -webkit-transform: translate3d(0, 50%, 0);
     transform: translate3d(0, 50%, 0);
   }
@@ -1359,7 +1379,6 @@ text-shadow: none;
 
 @keyframes fadeInUpOut {
   0% {
-    opacity: 0;
     -webkit-transform: translate3d(0, 50%, 0);
     transform: translate3d(0, 50%, 0);
   }

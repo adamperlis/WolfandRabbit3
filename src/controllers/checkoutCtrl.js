@@ -1,4 +1,4 @@
-module.exports = function($scope, $state, Tracks){
+module.exports = function($scope, $state, Tracks, Stripe){
 	Tracks.getTracks().then(function(tracks){
 		console.log(tracks)
 		$scope.tracks = tracks
@@ -9,5 +9,9 @@ module.exports = function($scope, $state, Tracks){
 			$scope.filtered = tag
 		})
 	}
+
+	console.log(Stripe)
+
+	$scope.stripe = Stripe
 
 }

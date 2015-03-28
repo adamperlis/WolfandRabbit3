@@ -1,4 +1,4 @@
-module.exports = function($scope, $state, Tracks, $timeout){
+module.exports = function($scope, $state, Tracks, $animate){
 	Tracks.getTracks().then(function(tracks){
 		console.log(tracks)
 		$scope.tracks = tracks
@@ -9,13 +9,5 @@ module.exports = function($scope, $state, Tracks, $timeout){
 			$scope.filtered = tag
 		})
 	}
-	
-    $scope.animation={fadeInUpOut:false};
-    $scope.fadeInUpOut=function(){
-      $scope.animation.fadeInUpOut=true;
-      $timeout(function(){
-        $scope.animation.fadeInUpOut=false;
-      },2000,true);
-    }
 
 }
