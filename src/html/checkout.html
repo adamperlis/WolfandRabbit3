@@ -17,7 +17,7 @@
         <div class="col-sm-4 col-xs-4 tracks"><p>{{ item.title }}</p></div>
         <div class="col-sm-2 col-xs-2 tracks"><p>{{ item.artist }}</p></div>
         <div class="col-sm-4 col-xs-4 tracks">
-            <select ng-options="license.type for license in item.licenses" class="form-control" ng-model="item.license">
+            <select ng-options="license.type for license in item.licenses" ng-change="changedValue()" class="form-control" ng-model="item.license">
             </select>
         </div>
         <div class="col-sm-1 col-xs-1 tracks"><p>{{ item.license.cost | currency }}</p></div>

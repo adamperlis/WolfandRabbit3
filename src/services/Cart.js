@@ -65,8 +65,14 @@ module.exports = function($rootScope) {
 		$rootScope.cart.total = $rootScope.cart.taxes + $rootScope.cart.subtotal
 	}
 
-	this.getItems = function(){
+	this.getItems = function() {
+
 		return $rootScope.cart.items
 	}
+
+	$rootScope.changedValue = function() {
+
+  		updateTotals()
+    }    
 
 }

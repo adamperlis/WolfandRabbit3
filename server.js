@@ -2,6 +2,7 @@
 
 var express = require('express');
 var app = express();
+var stripe = require("stripe")("sk_test_dtXPoQWDNFFz4uQJ1xxBXQrm");
 
 app.set('views', __dirname);
 app.engine('html', require('ejs').renderFile);
