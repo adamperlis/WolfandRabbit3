@@ -1,4 +1,4 @@
-module.exports = function($rootScope) {
+module.exports = function($rootScope, $sce, Modals) {
 
 	Stripe.setPublishableKey('pk_test_CW5yRHomB4M3eW4YmkU4BHAB');
 
@@ -22,6 +22,17 @@ module.exports = function($rootScope) {
 	}
 
 	var taxRate = .08875;
+
+	this.view = function() {
+		// open a new modal and show this video
+		Modals.open({
+			template: require('../html/partials/customLicense.html'),
+			customLicense: this,
+			controller: function($scope) {
+				console.log($scope)
+			}
+		})
+	}
 
 	this.add = function(item) {
 		
@@ -58,6 +69,10 @@ module.exports = function($rootScope) {
 
 		for (var i = 0; i < $rootScope.cart.items.length; i++) {
 			$rootScope.cart.subtotal += $rootScope.cart.items[i].license.cost 
+
+			if ($rootScope.cart.items[i].license.cost == "Custom") { //check if Custom, if so then display pop up to contact.
+				console.log("custom")
+			}
 		};
 
 		$rootScope.cart.taxes = $rootScope.cart.subtotal * taxRate

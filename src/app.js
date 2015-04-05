@@ -27,7 +27,7 @@ angular.module("wolfandrabbit2", [
 
 .service('Videos', ['$resource', '$q', 'Video', require('./services/Videos.js')])
 .service('Tracks', ['$resource', '$q', 'Track', require('./services/Tracks.js')])
-.service('Cart', ['$rootScope', require('./services/Cart.js')])
+.service('Cart', ['$rootScope', '$sce', 'Modals', require('./services/Cart.js')])
 .service('Stripe', ['$rootScope', 'Modals', require('./services/Stripe.js')])
 
 .factory('Video', ['$sce', 'Modals', require('./factories/Video.js')])

@@ -28,7 +28,7 @@
 				},
 				{
 					"type": "Custom",
-					"cost:": "Contact Us"
+					"cost:": "Custom"
 				}
 			]
 		},{
@@ -60,7 +60,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -92,7 +92,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -124,7 +124,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -156,7 +156,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -188,7 +188,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -220,7 +220,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -252,7 +252,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -284,7 +284,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		},{
@@ -316,7 +316,7 @@
             },
             {
                "type": "Custom",
-               "cost:": "Contact Us"
+               "cost:": "Custom"
             }
          ]
 		}]
