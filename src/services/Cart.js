@@ -1,19 +1,5 @@
 module.exports = function($rootScope, $sce, Modals) {
 
-	Stripe.setPublishableKey('pk_test_CW5yRHomB4M3eW4YmkU4BHAB');
-
-	function checkout() {
-		Stripe.card.createToken({
-		  number: 4242424242424242,
-		  cvc: 812,
-		  exp_month: 10,
-		  exp_year: 2020
-		}, function(status, response){
-			// look in stripe docs to charge a card using JS and the card token
-			console.log(status, response)
-		});
-	}
-
 	$rootScope.cart = {
 		items: [],
 		total: 0,

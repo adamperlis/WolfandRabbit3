@@ -13,12 +13,14 @@ module.exports = function($rootScope, Modal, $document, $compile, $q, $http, $te
         function compileTemplate(html, options) {
             var scope = angular.extend($rootScope.$new(), options);
 
-            $document.find('body').eq(0).addClass('active-modal').append($compile("<modal class='" + (options.class || '') + "'>" + html + "</modal>")(scope));
+            var compiled = $compile("<modal class='" + (options.class || '') + "'>" + html + "</modal>")(scope, function(e, scope) {
+                $controller(options.controller || function(){}, angular.extend({
+                    $scope: scope,
+                    ModalInstance: modals[modals.length - 1]
+                }, options.resolve));
+            });
 
-            $controller(options.controller || function(){}, angular.extend({
-                $scope: scope,
-                ModalInstance: modals[modals.length - 1]
-            }, options.resolve));
+            $document.find('body').eq(0).addClass('active-modal').append(compiled);
         }
 
         if (options.templateUrl) {
