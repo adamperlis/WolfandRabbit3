@@ -1,32 +1,35 @@
-<form ng-submit="submit(checkoutform)" name="checkoutform" id="payment-form" novalidate>
-  <span class="payment-errors"></span>
+<div>
+    <form ng-submit="submit()" name="checkout" id="payment-form" novalidate>
+      <span class="payment-errors"></span>
 
-  <div ng-show='error'>{{ error }}</div>
+      <div ng-show='error'>{{ error }}</div>
 
-  <div class="form-row" ng-class="{ 'error' : checkoutform.number.$invalid && checkoutform.number.$dirty }">
-    <label>
-      <span>Card Number</span>
-      <input ng-model="card.number" name="number" type="text" size="20" required>
-    </label>
-  </div>
+      <div class="form-row" ng-class="{ 'error' : checkoutform.number.$invalid && checkoutform.number.$dirty }">
+        <label>
+          <span>Card Number</span>
+          <input ng-model="card.number" name="number" type="text" size="20" required>
+          {{ cardType }}
+        </label>
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <input ng-model="card.cvc" type="text" size="4" required>
-    </label>
-  </div>
+      <div class="form-row">
+        <label>
+          <span>CVC</span>
+          <input ng-model="card.cvc" name="cvc" type="text" size="4" required>
+        </label>
+      </div>
 
-  <div class="form-row">
-    <label>
-      <span>Expiration (MM/YYYY)</span>
-      <input ng-model="card.exp_month" type="text" size="2" required>
-    </label>
-    <span> / </span>
-    <input ng-model="card.exp_year" type="text" size="4" required>
-  </div>
+      <div class="form-row">
+        <label>
+          <span>Expiration (MM/YYYY)</span>
+          <input ng-model="card.exp_month" name="month" type="text" size="2" required>
+        </label>
+        <span> / </span>
+        <input ng-model="card.exp_year" type="text" name="year" size="4" required>
+      </div>
 
-  <button id="submitBtn" type="submit" class="col-md-5 col-sm-5 col-xs-5 text-center button"><span>submit</span></button>
-  <img class="poweredByStripe" src="/src/img/stripe_outline@3x.png"/>
+      <button id="submitBtn" type="submit" class="col-md-5 col-sm-5 col-xs-5 text-center button"><span>submit</span></button>
+      <img class="poweredByStripe" src="/src/img/stripe_outline@3x.png"/>
 
-</form>
+    </form>
+</div>

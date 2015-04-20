@@ -14,7 +14,7 @@ module.exports = function($rootScope, Modal, $document, $compile, $q, $http, $te
             var scope = angular.extend($rootScope.$new(), options);
 
             var compiled = $compile("<modal class='" + (options.class || '') + "'>" + html + "</modal>")(scope, function(e, scope) {
-                $controller(options.controller || function(){}, angular.extend({
+                $controller(options.controller, angular.extend({
                     $scope: scope,
                     ModalInstance: modals[modals.length - 1]
                 }, options.resolve));

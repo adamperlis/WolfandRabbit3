@@ -24,6 +24,7 @@ angular.module("wolfandrabbit2", [
 .controller('aboutCtrl', ['$scope', '$state', require('./controllers/aboutCtrl.js')])
 .controller('libCtrl', ['$scope', '$state', 'Tracks', '$animate', require('./controllers/libCtrl.js')])
 .controller('checkoutCtrl', ['$scope', '$state', 'Tracks', 'Stripe', require('./controllers/checkoutCtrl.js')])
+.controller('stripeCheckoutCtrl', ['$scope', require('./controllers/stripePaymentCtrl.js')])
 
 .service('Videos', ['$resource', '$q', 'Video', require('./services/Videos.js')])
 .service('Tracks', ['$resource', '$q', 'Track', require('./services/Tracks.js')])

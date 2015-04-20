@@ -5,7 +5,6 @@ module.exports = function(Cart, $filter) {
 
 	var removeFromCart = function() {
 		Cart.remove(this)
-		console.log(this)
 	}
 
 	var getCost = function() {
@@ -25,6 +24,8 @@ module.exports = function(Cart, $filter) {
 		// };
 
 		data.license = data.licenses[0]
+
+        data.addToCart();
 
 		return data
 	}
