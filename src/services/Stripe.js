@@ -7,7 +7,7 @@ module.exports = function($rootScope, $sce, Modals, $http) {
 		Modals.open({
 			template: require('../html/partials/stripe.html'),
 			stripe: this,
-            controller: 'stripeCheckoutCtrl'
+            controller: 'stripePaymentCtrl'
 		})
 	}
 }

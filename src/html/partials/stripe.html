@@ -1,10 +1,10 @@
-<div>
+<div ng-if="!success" >
     <form ng-submit="submit()" name="checkout" id="payment-form" novalidate>
       <span class="payment-errors"></span>
 
       <div ng-show='error'>{{ error }}</div>
 
-      <div class="form-row" ng-class="{ 'error' : checkoutform.number.$invalid && checkoutform.number.$dirty }">
+      <div class="form-row" ng-class="{ 'error' : checkout.number.$invalid && checkout.$submitted , 'valid' : !checkout.number.$invalid && checkout.$submitted  }">
         <label>
           <span>Card Number</span>
           <input ng-model="card.number" name="number" type="text" size="20" required>
@@ -12,14 +12,14 @@
         </label>
       </div>
 
-      <div class="form-row">
+      <div class="form-row" ng-class="{ 'error' : checkout.cvc.$invalid && checkout.$submitted }">
         <label>
           <span>CVC</span>
           <input ng-model="card.cvc" name="cvc" type="text" size="4" required>
         </label>
       </div>
 
-      <div class="form-row">
+      <div class="form-row" ng-class="{ 'error' : ( checkout.month.$invalid || checkout.year.$invalid ) && checkout.$submitted }">
         <label>
           <span>Expiration (MM/YYYY)</span>
           <input ng-model="card.exp_month" name="month" type="text" size="2" required>
@@ -33,3 +33,6 @@
 
     </form>
 </div>
+<div ng-if="success">
+  We will email you
+</div> 

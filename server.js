@@ -3,7 +3,10 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var stripe = require("stripe")("sk_test_dtXPoQWDNFFz4uQJ1xxBXQrm");
+var config = require('./.env.js');
+var stripe = require("stripe")(config.stripeKey);
+
+console.log(config.stripeKey)
 
 app.set('views', __dirname);
 app.engine('html', require('ejs').renderFile);
@@ -11,7 +14,7 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
 app.post('/charge', function(req, res) {
-	console.log('charged')
+	console.log('charged', req.body.token)
 
 	var charge = stripe.charges.create({
 		amount: req.body.amount*100, // amount in cents, again

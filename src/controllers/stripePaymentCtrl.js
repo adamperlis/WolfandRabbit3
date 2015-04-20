@@ -1,22 +1,34 @@
-module.exports = function($scope) {
+module.exports = function($scope, $http, $rootScope) {
     $scope.card = {};
 
     Stripe.setPublishableKey('pk_test_CW5yRHomB4M3eW4YmkU4BHAB');
 
     $scope.$watch('card.number', function(cardnumber) {
-        if (cardnumber) {
+        if (cardnumber && $scope.checkout) {
+            $scope.checkout.number.$invalid = (Stripe.card.validateCardNumber(cardnumber) ? false : true);
+        }
 
-            // $scope.card.number.$invalid = (Stripe.card.validateCardNumber(cardnumber) ? false : true);
+        if (cardnumber) {
             var type = Stripe.card.cardType(cardnumber);
 
             $scope.cardType = (type == 'Unknown') ? '' : type;
         }
     })
 
-
     $scope.submit = function() {
 
+        $scope.error = ''
+        $scope.success = false
+
+
+        console.log(this)
+       
+        $scope.checkout = this.checkout
+
+        $scope.checkout.number.$setValidity('card', (Stripe.card.validateCardNumber($scope.card.number) ? true : false));
+
         if ( ! Stripe.card.validateCardNumber($scope.card.number)) {
+            
             $scope.error = "invalid card";
             return false;
         }
@@ -38,7 +50,12 @@ module.exports = function($scope) {
                 $http.post('/charge', {
                     token: response.id,
                     amount: $rootScope.cart.total
-                }).success().error()
+                }).success(function() {
+                    $scope.success = true
+                    console.log('Server success')
+                }).error(function() {
+                    console.log('Server fail')
+                })
             } else {
                 $scope.$evalAsync(function() {
                     $scope.error = response.error.message

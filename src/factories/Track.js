@@ -25,7 +25,7 @@ module.exports = function(Cart, $filter) {
 
 		data.license = data.licenses[0]
 
-        data.addToCart();
+        // data.addToCart(); //add a bunch of tracks to cart.
 
 		return data
 	}
