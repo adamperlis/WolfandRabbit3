@@ -49,7 +49,9 @@ module.exports = function($scope, $http, $rootScope) {
 
                 $http.post('/charge', {
                     token: response.id,
-                    amount: $rootScope.cart.total
+                    amount: $rootScope.cart.total,
+                    email: $scope.card.email,
+                    cart: $rootScope.cart
                 }).success(function() {
                     $scope.success = true
                     console.log('Server success')

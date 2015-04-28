@@ -4,6 +4,13 @@
 
       <div ng-show='error'>{{ error }}</div>
 
+      <div class="form-row">
+        <label>
+          <span>Email</span>
+          <input ng-model="card.email" name="email" type="email" size="40" required>
+        </label>
+      </div>
+
       <div class="form-row" ng-class="{ 'error' : checkout.number.$invalid && checkout.$submitted , 'valid' : !checkout.number.$invalid && checkout.$submitted  }">
         <label>
           <span>Card Number</span>

@@ -1,0 +1,9 @@
+<p>Thanks for your purchase!</p>	
+
+<ul>
+	<% cart.items.forEach(function(item){ %>
+		<li><%= item.title %></li>
+	<% }) %>
+</ul>
+
+<p>For a refund please contact customer support at <a href='#'>support@wolfandrabbitmusic.com</a></p>
