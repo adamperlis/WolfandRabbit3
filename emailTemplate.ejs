@@ -1,9 +1,11 @@
-<p>Thanks for your purchase!</p>	
+<p>Thanks for your purchase. You can find your download link below:</p>	
 
 <ul>
 	<% cart.items.forEach(function(item){ %>
-		<li><%= item.title %></li>
+		<li style="list-style-type: none;"><%= item.title %></li>
+		<li style="list-style-type: none;"><%= item.artist %></li>
+		<li style="list-style-type: none;"><%= item.url %></li>
 	<% }) %>
 </ul>
 
-<p>For a refund please contact customer support at <a href='#'>support@wolfandrabbitmusic.com</a></p>
+<p>For a refund please contact customer support at <a href='#'>wolfandrabbitmusic@gmail.com</a></p>

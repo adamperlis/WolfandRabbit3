@@ -8,6 +8,15 @@ var stripe = require("stripe")(config.stripeKey);
 var sendgrid  = require('sendgrid')(config.sendgridKey);
 var fs = require('fs');
 var ejs = require('ejs');
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+	host: config.mysql.host,
+	database: config.mysql.database,
+	user: config.mysql.user,
+	password: config.mysql.password
+})
+
+connection.connect();
 
 console.log(config.sendgridUser)
 console.log(config.sendgridKey)
@@ -17,6 +26,19 @@ app.engine('html', ejs.renderFile);
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
+app.get('/api/tracks', function(req, res){
+
+	connection.query('SELECT tracks.*, tags.tag FROM tracks JOIN tags_tracks ON tags_tracks.track_id = tracks.id JOIN tags ON tags_tracks.tag_id = tags.id;', function(err, rows, fields){
+		console.log(rows)
+		console.log(err)
+
+		res.send({
+			data: rows
+		});
+	})
+
+})
+
 app.post('/charge', function(req, res) {
 	// console.log('charged', req.body, req.body.cart.items[0])
 
@@ -24,9 +46,10 @@ app.post('/charge', function(req, res) {
 		amount: req.body.amount*100, // amount in cents, again
 		currency: "usd",
 		source: req.body.token,
-		description: "payinguser@example.com"
+		description: "payinguser@example.com",
+		receipt_email: req.body.email
 	}, function(err, charge) {
-		// console.log(err)
+		console.log(err, charge)
 		
 		if (err) {
 			// return res.status(500)
@@ -42,7 +65,7 @@ app.post('/charge', function(req, res) {
 			sendgrid.send({
 			  to:       req.body.email,
 			  from:     'adam.perlis@gmail.com',
-			  subject: 'Thank You! Your receipt and download link from Wolf & Rabbit Music is enclosed',
+			  subject: 	'Your Wolf & Rabbit Music Download',
 			  cc:       'adam.perlis@gmail.com',
 			  html:     compiled
 			}, function(err, json) {
