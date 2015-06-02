@@ -9,14 +9,21 @@ var sendgrid  = require('sendgrid')(config.sendgridKey);
 var fs = require('fs');
 var ejs = require('ejs');
 var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: config.mysql.host,
-	database: config.mysql.database,
-	user: config.mysql.user,
-	password: config.mysql.password
-})
+var knex = require('knex')({
+  client: 'mysql',
+  connection: {
+  	host: config.mysql.host,
+  	user: config.mysql.user,
+  	password: config.mysql.password,
+	database: config.mysql.database,	
+    charset  : 'utf8'
+  }
+});
 
-connection.connect();
+var Tag = require('./models/tag.js')(knex);
+var License = require('./models/license.js')(knex);
+var Track = require('./models/track.js')(knex, Tag, License);
+
 
 console.log(config.sendgridUser)
 console.log(config.sendgridKey)
@@ -28,15 +35,15 @@ app.use(bodyParser.json());
 
 app.get('/api/tracks', function(req, res){
 
-	connection.query('SELECT tracks.*, tags.tag FROM tracks JOIN tags_tracks ON tags_tracks.track_id = tracks.id JOIN tags ON tags_tracks.tag_id = tags.id;', function(err, rows, fields){
-		console.log(rows)
-		console.log(err)
-
+	new Track().fetchAll({
+		withRelated: ['tags', 'licenses']
+	}).then(function(model) {
+		console.log(JSON.stringify(model));
+	
 		res.send({
-			data: rows
+			data: model
 		});
 	})
-
 })
 
 app.post('/charge', function(req, res) {
