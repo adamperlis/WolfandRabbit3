@@ -10,6 +10,5 @@ module.exports = function(knex, Tag, License) {
 		licenses: function(){
 			return this.belongsToMany(License, 'licenses_tracks', 'track_id', 'license_id');
 		}
-
 	})
 }

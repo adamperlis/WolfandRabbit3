@@ -3,7 +3,13 @@ module.exports = function(knex) {
 
 	return bookshelf.Model.extend({
 
-		tableName: 'tags'
+		tableName: 'tags',
+
+		parse: function(attrs) {
+			console.log(attrs)
+
+			return attrs.tag
+		}
 
 	})
 }
