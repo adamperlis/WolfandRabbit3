@@ -11,11 +11,14 @@ require('./modules/UI')
 // require('./js/animated-nav')
 // require('./js/audio-player')
 
-angular.module("wolfandrabbit2", [
+angular.module('wolfandrabbit2', [
 	'ui.router', 
 	'ngResource', 
 	'Modal', 
-	'UI'
+	'UI',
+	'ngSanitize',
+	'com.2fdevs.videogular',
+	'com.2fdevs.videogular.plugins.controls'
 ])
 
 .config(require('./routes'))
@@ -25,6 +28,8 @@ angular.module("wolfandrabbit2", [
 .controller('libCtrl', ['$scope', '$state', 'Tracks', '$animate', require('./controllers/libCtrl.js')])
 .controller('checkoutCtrl', ['$scope', '$state', 'Tracks', 'Stripe', require('./controllers/checkoutCtrl.js')])
 .controller('stripePaymentCtrl', ['$scope', '$http', '$rootScope', require('./controllers/stripePaymentCtrl.js')])
+.controller('playerCtrl', ['$sce', require('./controllers/playerCtrl.js')])
+
 
 .service('Videos', ['$resource', '$q', 'Video', require('./services/Videos.js')])
 .service('Tracks', ['$resource', '$q', 'Track', require('./services/Tracks.js')])
@@ -42,7 +47,7 @@ angular.module("wolfandrabbit2", [
 
 
 
-angular.bootstrap(document, ["wolfandrabbit2"]);
+angular.bootstrap(document, ['wolfandrabbit2']);
 
 //Put your damn google analytics number here 
 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
