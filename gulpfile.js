@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 	browserify = require('gulp-browserify')
 	plumber = require('gulp-plumber')
 	less = require('gulp-less')
-	config = require('./.env.js')
+	// config = require('./.env.js')
 	envify = require('envify/custom')
 
 gulp.task('default', ['scripts', 'watch', 'less'])
