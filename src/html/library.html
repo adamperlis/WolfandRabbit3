@@ -70,7 +70,8 @@
       </div>
       <div class="col-sm-12 col-xs-12 library-sections" style="display: inline-block;padding-bottom: 10px;">
         <div class="col-sm-1 col-xs-1 hidden-xs"></div>
-        <div class="col-sm-5 col-xs-5"><p>Track Title</p></div>
+        <div class="col-sm-3 col-xs-3"><p>Track Title</p></div>
+        <div class="col-sm-2 col-xs-2"><p>Artist</p></div>
         <div class="col-sm-3 col-xs-5"><p>Genre</p></div>
         <div class="col-sm-1 col-xs-2"><p>Duration</p></div>
         <div class="col-sm-2 col-xs-2 hidden-xs"></div>
@@ -80,10 +81,11 @@
         <div class="col-sm-1 hidden-xs tracks">
           <i id="play" class="entypo-right-dir"></i>
         </div>
-        <div class="col-sm-5 col-xs-5 tracks"><p>{{ track.title }}</p></div>
+        <div class="col-sm-3 col-xs-3 tracks"><p>{{ track.title }}</p></div>
+        <div class="col-sm-2 col-xs-2 tracks"><p>{{ track.artist }}</p></div>
         <div class="col-sm-3 col-xs-5 tracks"><p id="genre" ng-repeat="tag in track.tags">{{ tag }}{{$last ? '' : ', '}} </p></div>
-        <div class="col-sm-1 col-xs-2 tracks"><p>1:23</p></div>
-        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><i class="entypo-plus" id="lightboxIcon"></i><i class="entypo-down-circled" id="downloadIcon"></i><i ng-click="fadeInUpOut(); track.addToCart();" class="entypo-basket" id="cartIcon"></i></div>
+        <div class="col-sm-1 col-xs-2 tracks"><p>{{ track.duration | secondsToDateTime | date:'mm:ss' }}</p></div>
+        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><i class="entypo-plus" id="lightboxIcon"></i><a target="_blank" href="{{ track.preview }}"><i class="entypo-down-circled" id="downloadIcon"></i></a><i ng-click="fadeInUpOut(); track.addToCart();" class="entypo-basket" id="cartIcon"></i></div>
       </div>
     </div>
   </div>

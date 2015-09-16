@@ -2,7 +2,7 @@
   "name": "wolfandrabbit2",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "^1.3.9",
+    "angular": "1.3.9",
     "angular-animate": "^1.3.13",
     "angular-bootstrap-npm": "^0.12.3",
     "angular-resource": "^1.3.11",

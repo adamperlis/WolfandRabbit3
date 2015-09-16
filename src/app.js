@@ -4,6 +4,7 @@ require('angular')
 require('angular-ui-router')
 require('angular-resource')
 require('angular-animate')
+require('angular-sanitize')
 require('./modules/Modal')
 require('./modules/UI')
 
@@ -16,9 +17,7 @@ angular.module('wolfandrabbit2', [
 	'ngResource', 
 	'Modal', 
 	'UI',
-	'ngSanitize',
-	'com.2fdevs.videogular',
-	'com.2fdevs.videogular.plugins.controls'
+	'ngSanitize'
 ])
 
 .config(require('./routes'))
@@ -44,6 +43,8 @@ angular.module('wolfandrabbit2', [
 .directive('sticky', ['Scroller', require('./directives/navbar.js')])
 .directive('remove', ['Scroller', require('./directives/removeBg2.js')])
 .directive('addToCart', ['$rootScope', '$animate', '$timeout', require('./directives/addToCart.js')])
+
+.filter('secondsToDateTime', [require('./filters/secondsToDateTime.js')])
 
 
 

@@ -4,10 +4,11 @@ var randomstring = require('randomstring')
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-// var config = require('./.env.js');
+var config = require('./.env.js');
 var stripe = require("stripe")(config.stripeKey);
 var sendgrid  = require('sendgrid')(config.sendgridKey);
 var fs = require('fs');
+var url = require('url')
 var ejs = require('ejs');
 var mysql = require('mysql');
 var knex = require('knex')({
@@ -28,6 +29,14 @@ var Download = require('./models/download.js')(knex, Track);
 
 app.set('views', __dirname);
 app.engine('html', ejs.renderFile);
+
+app.get('/download', function(req, res){
+	
+	console.log(req.query)
+  
+	res.download(req.query.file)
+})
+
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
