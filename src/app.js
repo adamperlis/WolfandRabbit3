@@ -45,6 +45,7 @@ angular.module('wolfandrabbit2', [
 .directive('addToCart', ['$rootScope', '$animate', '$timeout', require('./directives/addToCart.js')])
 
 .filter('secondsToDateTime', [require('./filters/secondsToDateTime.js')])
+.filter('filterMultiple', [require('./filters/filterMultiple.js')])
 
 
 

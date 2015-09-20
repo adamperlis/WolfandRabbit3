@@ -10,8 +10,6 @@
       </div>
 
       <ul class="tags">
-        <li><a ng-click="filter('')" class="tag filter" href="#"><span>All</span></a>
-        </li>
         <li><a ng-click="filter('rock')" class="tag filter" href="#"><span>Rock</span></a>
         </li>
         <li><a ng-click="filter('folk')" class="tag filter" href="#"><span>Folk</span></a>
@@ -26,7 +24,7 @@
         </li>
         <li><a ng-click="filter('classical')" class="tag filter" href="#"><span>Classical</span></a>
         </li>
-        <li><a ng-click="filter('pop')" class="tag filter" href="#"><span>Pop</span></a>
+        <li ng-class="{'active': filtered.indexOf('pop') > -1}"><a ng-click="filter('pop')" class="tag filter" href="#"><span>Pop</span></a>
         </li>
         <li><a ng-click="filter('electronic')" class="tag filter" href="#"><span>Electronic</span></a>
         </li>
@@ -60,6 +58,13 @@
         </li>    
       </ul>
     </div>
+
+    <div>
+      <ul>
+        <li ng-repeat="tag in filtered" ng-click="filter(tag)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</li>
+      </ul>
+    </div>
+
     <div class="col-md-9 col-sm-9 col-xs-12 container list">
       <i class="entypo-check addToCart"></i>
       
@@ -77,7 +82,7 @@
         <div class="col-sm-2 col-xs-2 hidden-xs"></div>
       </div>
 
-      <div ng-repeat="track in tracks | filter:filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
+      <div ng-repeat="track in tracks | filterMultiple:'tags':filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 hidden-xs tracks">
           <i id="play" class="entypo-right-dir"></i>
         </div>
@@ -85,7 +90,7 @@
         <div class="col-sm-2 col-xs-2 tracks"><p>{{ track.artist }}</p></div>
         <div class="col-sm-3 col-xs-5 tracks"><p id="genre" ng-repeat="tag in track.tags">{{ tag }}{{$last ? '' : ', '}} </p></div>
         <div class="col-sm-1 col-xs-2 tracks"><p>{{ track.duration | secondsToDateTime | date:'mm:ss' }}</p></div>
-        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><i class="entypo-plus" id="lightboxIcon"></i><a target="_blank" href="{{ track.preview }}"><i class="entypo-down-circled" id="downloadIcon"></i></a><i ng-click="fadeInUpOut(); track.addToCart();" class="entypo-basket" id="cartIcon"></i></div>
+        <div class="col-sm-2 col-xs-2 tracks hidden-xs"><a target="_blank" href="{{ track.preview }}"><i class="entypo-down-circled" id="downloadIcon"></i></a><i ng-click="fadeInUpOut(); track.addToCart();" class="entypo-basket" id="cartIcon"></i></div>
       </div>
     </div>
   </div>
