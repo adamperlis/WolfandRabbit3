@@ -10,62 +10,59 @@
       </div>
 
       <ul class="tags">
-        <li><a ng-click="filter('rock')" class="tag filter" href="#"><span>Rock</span></a>
+        <li  ng-class="{'active': filtered.indexOf('rock') > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('rock') > -1}" ng-click="filter('rock')">Rock</span></a>
         </li>
-        <li><a ng-click="filter('folk')" class="tag filter" href="#"><span>Folk</span></a>
+        <li  ng-class="{'active': filtered.indexOf('folk') > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('folk') > -1}" ng-click="filter('folk')">Folk</span></a>
         </li>
-        <li><a ng-click="filter('hip hop')" class="tag filter" href="#"><span>Hip Hop</span></a>
+        <li  ng-class="{'active': filtered.indexOf('hip hop') > -1}"><a ng-click="filter('hip hop')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('hip hop') > -1}">Hip Hop</span></a>
         </li>
-        <li><a ng-click="filter('country')" class="tag filter" href="#"><span>Country</span></a>
+        <li  ng-class="{'active': filtered.indexOf('country') > -1}"><a ng-click="filter('country')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('country') > -1}">Country</span></a>
         </li>
-        <li><a ng-click="filter('alternative')" class="tag filter" href="#"><span>Alternative</span></a>
+        <li  ng-class="{'active': filtered.indexOf('alternative') > -1}"><a ng-click="filter('alternative')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('alternative') > -1}">Alternative</span></a>
         </li>
-        <li><a ng-click="filter('soul')" class="tag filter" href="#"><span>Soul</span></a>
+        <li  ng-class="{'active': filtered.indexOf('soul') > -1}"><a ng-click="filter('soul')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('soul') > -1}">Soul</span></a>
         </li>
-        <li><a ng-click="filter('classical')" class="tag filter" href="#"><span>Classical</span></a>
+        <li  ng-class="{'active': filtered.indexOf('classical') > -1}"><a ng-click="filter('classical')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('classical') > -1}">Classical</span></a>
         </li>
-        <li ng-class="{'active': filtered.indexOf('pop') > -1}"><a ng-click="filter('pop')" class="tag filter" href="#"><span>Pop</span></a>
+        <li ng-class="{'active': filtered.indexOf('pop') > -1}"><a ng-click="filter('pop')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('pop') > -1}">Pop</span></a>
         </li>
-        <li><a ng-click="filter('electronic')" class="tag filter" href="#"><span>Electronic</span></a>
+        <li  ng-class="{'active': filtered.indexOf('electronic') > -1}"><a ng-click="filter('electronic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('electronic') > -1}">Electronic</span></a>
         </li>
-        <li><a ng-click="filter('ambient')" class="tag filter" href="#"><span>Ambient</span></a>
+        <li  ng-class="{'active': filtered.indexOf('ambient') > -1}"><a ng-click="filter('ambient')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('ambient') > -1}">Ambient</span></a>
         </li>
-        <li><a ng-click="filter('orchestral')" class="tag filter" href="#"><span>Orchestral</span></a>
+        <li  ng-class="{'active': filtered.indexOf('orchestral') > -1}"><a ng-click="filter('orchestral')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('orchestral') > -1}">Orchestral</span></a>
         </li>
-        <li><a ng-click="filter('beats')" class="tag filter" href="#"><span>Beats </span></a>
+        <li  ng-class="{'active': filtered.indexOf('beats') > -1}"><a ng-click="filter('beats')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('beats') > -1}">Beats </span></a>
         </li>
-        <li><a ng-click="filter('inspiring')" class="tag filter" href="#"><span>Inspiring</span></a>
+        <li  ng-class="{'active': filtered.indexOf('inspiring') > -1}"><a ng-click="filter('inspiring')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('inspiring') > -1}">Inspiring</span></a>
         </li>
-        <li><a ng-click="filter('anthemic')" class="tag filter" href="#"><span>Anthemic</span></a>
+        <li  ng-class="{'active': filtered.indexOf('anthemic') > -1}"><a ng-click="filter('anthemic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('anthemic') > -1}">Anthemic</span></a>
         </li>
-        <li><a ng-click="filter('angelic')" class="tag filter" href="#"><span>Angelic</span></a>
+        <li  ng-class="{'active': filtered.indexOf('angelic') > -1}"><a ng-click="filter('angelic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('angelic') > -1}">Angelic</span></a>
         </li>
-        <li><a ng-click="filter('bouncy')" class="tag filter" href="#"><span>Bouncy</span></a>
+        <li  ng-class="{'active': filtered.indexOf('bouncy') > -1}"><a ng-click="filter('bouncy')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('bouncy') > -1}">Bouncy</span></a>
         </li>
-        <li><a ng-click="filter('bright')" class="tag filter" href="#"><span>Bright</span></a>
+        <li  ng-class="{'active': filtered.indexOf('bright') > -1}"><a ng-click="filter('bright')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('bright') > -1}">Bright</span></a>
         </li>
-        <li><a ng-click="filter('burdened')" class="tag filter" href="#"><span>Burdened</span></a>
+        <li  ng-class="{'active': filtered.indexOf('burdened') > -1}"><a ng-click="filter('burdened')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('burdened') > -1}">Burdened</span></a>
         </li>
-        <li><a ng-click="filter('driving')" class="tag filter" href="#"><span>Driving</span></a>
+        <li  ng-class="{'active': filtered.indexOf('driving') > -1}"><a ng-click="filter('driving')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('driving') > -1}">Driving</span></a>
         </li>
-        <li><a ng-click="filter('playful')" class="tag filter" href="#"><span>Playful</span></a>
+        <li  ng-class="{'active': filtered.indexOf('playful') > -1}"><a ng-click="filter('playful')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('playful') > -1}">Playful</span></a>
         </li>
-        <li><a ng-click="filter('whimsical')" class="tag filter" href="#"><span>Whimsical</span></a>
+        <li  ng-class="{'active': filtered.indexOf('whimsical') > -1}"><a ng-click="filter('whimsical')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('whimsical') > -1}">Whimsical</span></a>
         </li>
-        <li><a ng-click="filter('calm')" class="tag filter" href="#"><span>Calm</span></a>
+        <li  ng-class="{'active': filtered.indexOf('calm') > -1}"><a ng-click="filter('calm')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('calm') > -1}">Calm</span></a>
         </li>
-        <li><a ng-click="filter('pensive')" class="tag filter" href="#"><span>Pensive</span></a>
+        <li  ng-class="{'active': filtered.indexOf('pensive') > -1}"><a ng-click="filter('pensive')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('pensive') > -1}">Pensive</span></a>
         </li>    
       </ul>
     </div>
 
-    <div>
-      <ul>
-        <li ng-repeat="tag in filtered" ng-click="filter(tag)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</li>
-      </ul>
-    </div>
+
 
     <div class="col-md-9 col-sm-9 col-xs-12 container list">
+
       <i class="entypo-check addToCart"></i>
       
       <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-bottom: 54px;">
