@@ -24,7 +24,7 @@ angular.module('wolfandrabbit2', [
 
 .controller('homeCtrl', ['$scope', '$state', '$resource', 'Videos', require('./controllers/homeCtrl.js')])
 .controller('aboutCtrl', ['$scope', '$state', require('./controllers/aboutCtrl.js')])
-.controller('libCtrl', ['$scope', '$state', 'Tracks', '$animate', require('./controllers/libCtrl.js')])
+.controller('libCtrl', ['$scope', '$state', 'Tracks', '$animate', 'Tags', require('./controllers/libCtrl.js')])
 .controller('checkoutCtrl', ['$scope', '$state', 'Tracks', 'Stripe', require('./controllers/checkoutCtrl.js')])
 .controller('stripePaymentCtrl', ['$scope', '$http', '$rootScope', require('./controllers/stripePaymentCtrl.js')])
 .controller('playerCtrl', ['$sce', require('./controllers/playerCtrl.js')])
@@ -32,6 +32,7 @@ angular.module('wolfandrabbit2', [
 
 .service('Videos', ['$resource', '$q', 'Video', require('./services/Videos.js')])
 .service('Tracks', ['$resource', '$q', 'Track', require('./services/Tracks.js')])
+.service('Tags', ['$resource', '$q', require('./services/Tags.js')])
 .service('Cart', ['$rootScope', '$sce', 'Modals', require('./services/Cart.js')])
 .service('Stripe', ['$rootScope', '$sce', 'Modals', '$http', require('./services/Stripe.js')])
 
@@ -43,6 +44,7 @@ angular.module('wolfandrabbit2', [
 .directive('sticky', ['Scroller', require('./directives/navbar.js')])
 .directive('remove', ['Scroller', require('./directives/removeBg2.js')])
 .directive('addToCart', ['$rootScope', '$animate', '$timeout', require('./directives/addToCart.js')])
+.directive('player', ['$rootScope', '$animate', '$timeout', require('./directives/player.js')])
 
 .filter('secondsToDateTime', [require('./filters/secondsToDateTime.js')])
 .filter('filterMultiple', [require('./filters/filterMultiple.js')])

@@ -9,53 +9,9 @@
         <input type="text" class="form-control" ng-model="search.$" placeholder="Search Tracks">
       </div>
 
-      <ul class="tags">
-        <li  ng-class="{'active': filtered.indexOf('rock') > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('rock') > -1}" ng-click="filter('rock')">Rock</span></a>
+      <ul class="tags" ng-repeat="tag in tags | orderBy: 'tag'">
+        <li ng-class="{'active': filtered.indexOf(tag.tag) > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf(tag.tag) > -1}" ng-click="filter(tag.tag)">{{ tag.tag }}</span></a>
         </li>
-        <li  ng-class="{'active': filtered.indexOf('folk') > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('folk') > -1}" ng-click="filter('folk')">Folk</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('hip hop') > -1}"><a ng-click="filter('hip hop')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('hip hop') > -1}">Hip Hop</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('country') > -1}"><a ng-click="filter('country')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('country') > -1}">Country</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('alternative') > -1}"><a ng-click="filter('alternative')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('alternative') > -1}">Alternative</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('soul') > -1}"><a ng-click="filter('soul')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('soul') > -1}">Soul</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('classical') > -1}"><a ng-click="filter('classical')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('classical') > -1}">Classical</span></a>
-        </li>
-        <li ng-class="{'active': filtered.indexOf('pop') > -1}"><a ng-click="filter('pop')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('pop') > -1}">Pop</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('electronic') > -1}"><a ng-click="filter('electronic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('electronic') > -1}">Electronic</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('ambient') > -1}"><a ng-click="filter('ambient')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('ambient') > -1}">Ambient</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('orchestral') > -1}"><a ng-click="filter('orchestral')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('orchestral') > -1}">Orchestral</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('beats') > -1}"><a ng-click="filter('beats')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('beats') > -1}">Beats </span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('inspiring') > -1}"><a ng-click="filter('inspiring')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('inspiring') > -1}">Inspiring</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('anthemic') > -1}"><a ng-click="filter('anthemic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('anthemic') > -1}">Anthemic</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('angelic') > -1}"><a ng-click="filter('angelic')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('angelic') > -1}">Angelic</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('bouncy') > -1}"><a ng-click="filter('bouncy')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('bouncy') > -1}">Bouncy</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('bright') > -1}"><a ng-click="filter('bright')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('bright') > -1}">Bright</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('burdened') > -1}"><a ng-click="filter('burdened')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('burdened') > -1}">Burdened</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('driving') > -1}"><a ng-click="filter('driving')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('driving') > -1}">Driving</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('playful') > -1}"><a ng-click="filter('playful')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('playful') > -1}">Playful</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('whimsical') > -1}"><a ng-click="filter('whimsical')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('whimsical') > -1}">Whimsical</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('calm') > -1}"><a ng-click="filter('calm')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('calm') > -1}">Calm</span></a>
-        </li>
-        <li  ng-class="{'active': filtered.indexOf('pensive') > -1}"><a ng-click="filter('pensive')" class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf('pensive') > -1}">Pensive</span></a>
-        </li>    
       </ul>
     </div>
 
@@ -81,7 +37,7 @@
 
       <div ng-repeat="track in tracks | filterMultiple:'tags':filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 hidden-xs tracks">
-          <i id="play" class="entypo-right-dir"></i>
+          <i id="play" ng-click="play()" class="entypo-right-dir"></i>
         </div>
         <div class="col-sm-3 col-xs-3 tracks"><p>{{ track.title }}</p></div>
         <div class="col-sm-2 col-xs-2 tracks"><p>{{ track.artist }}</p></div>
@@ -93,23 +49,12 @@
   </div>
 </div>  
 
-<div ng-controller="playerCtrl as player">
-    <videogular vg-theme="player.config.theme.url" class="audio">
-      <vg-media vg-src="player.config.sources" vg-type="audio"></vg-media>
-
-      <vg-controls>
-        <vg-play-pause-button></vg-play-pause-button>
-        <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-        <vg-scrub-bar>
-          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-        </vg-scrub-bar>
-        <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-        <vg-volume>
-          <vg-mute-button></vg-mute-button>
-        </vg-volume>
-      </vg-controls>
-    </videogular>
-  </div>
+<player>
+  <audio>
+    <source src="{{ track.preview }}" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+</player>
 
 
 

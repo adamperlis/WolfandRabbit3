@@ -51,6 +51,14 @@ app.get('/api/tracks', function(req, res){
 	})
 })
 
+app.get('/api/tags', function(req, res){
+	new Tag().fetchAll().then(function(model) {
+		res.send({
+			data: model	
+		});
+	})
+})
+
 app.post('/charge', function(req, res) {
 	// console.log('charged', req.body, req.body.cart.items[0])
 

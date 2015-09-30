@@ -12,20 +12,19 @@ module.exports = function(Cart, $filter) {
 	}
 
 	return function(data) {
+		var tags = [];
 
 		data.addToCart = addToCart;
 
 		data.removeFromCart = removeFromCart;
 
-		// for (var i = 0; i < data.licenses.length; i++) {
-		// 	if ( Number(data.licenses[i].cost)===data.licenses[i].cost && data.licenses[i].cost%1===0 ) {
-		// 		data.licenses[i].cost = $filter('currency')(data.licenses[i].cost)
-		// 	}
-		// };
-
 		data.license = data.licenses[0]
 
-        // data.addToCart(); //add a bunch of tracks to cart.
+        for (var i = data.tags.length - 1; i >= 0; i--) {
+        	tags.push(data.tags[i].tag);
+        };
+
+        data.tags = tags;
 
 		return data
 	}

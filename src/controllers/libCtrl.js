@@ -1,9 +1,14 @@
-module.exports = function($scope, $state, Tracks, $animate){
+module.exports = function($scope, $state, Tracks, $animate, Tags){
 	$scope.filtered = [];
 
 	Tracks.getTracks().then(function(tracks){
 		console.log(tracks)
 		$scope.tracks = tracks
+	})
+
+	Tags.getTags().then(function(tags){
+		console.log(tags)
+		$scope.tags = tags
 	})
 
 	$scope.filter = function(tag){

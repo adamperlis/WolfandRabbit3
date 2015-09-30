@@ -6,9 +6,9 @@ module.exports = function(knex) {
 		tableName: 'tags',
 
 		parse: function(attrs) {
-			console.log(attrs)
-
-			return attrs.tag
+			return {
+				tag: attrs.tag
+			}
 		}
 
 	})

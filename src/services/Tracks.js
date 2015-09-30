@@ -1,7 +1,7 @@
 module.exports = function($resource, $q, Track) { 
 	var resource = $resource('/api/tracks', {}, {
 		get: { 
-			method: 'GET',
+			method: 'GET'
 		}
 	})
 
