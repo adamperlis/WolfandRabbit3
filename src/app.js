@@ -45,6 +45,7 @@ angular.module('wolfandrabbit2', [
 .directive('remove', ['Scroller', require('./directives/removeBg2.js')])
 .directive('addToCart', ['$rootScope', '$animate', '$timeout', require('./directives/addToCart.js')])
 .directive('player', ['$rootScope', '$animate', '$timeout', require('./directives/player.js')])
+.directive('audio', [require('./directives/audio.js')])
 
 .filter('secondsToDateTime', [require('./filters/secondsToDateTime.js')])
 .filter('filterMultiple', [require('./filters/filterMultiple.js')])
