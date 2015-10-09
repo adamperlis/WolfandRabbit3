@@ -11,6 +11,12 @@ module.exports = function($scope, $state, Tracks, $animate, Tags){
 		$scope.tags = tags
 	})
 
+	$scope.play = function(track) {	
+		// console.log(track)	
+		$scope.currentTrack = track
+	}
+	
+
 	$scope.filter = function(tag){
 		$scope.$evalAsync(function() {
 

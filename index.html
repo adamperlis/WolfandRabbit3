@@ -28,11 +28,13 @@
 				</button>
 				<div class="navbar-brand" ui-sref="home"><div class="logo"></div></div>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse" style="padding-top:11px">
+			<div ng-controller="homeCtrl as homeCtrl2" id="navbar" class="navbar-collapse collapse" style="padding-top:11px">
 				<ul class="nav navbar-nav nav-menu-items">
-					<li id="featured-btn"><a scroll-to="featured">Featured Work</a></li>
-					<li><a href="#libaryContainer" ui-sref="library">Library</a></li>
-					<li><a scroll-to="about">About</a></li>
+					<li ng-class="{hidden: $state.includes('library'), hide: $state.includes('checkout')}"><a href="#libaryContainer" ui-sref="library">Library</a></li>
+					<li class="hidden" ng-class="{hidden: $state.includes('home'), hide: $state.includes('checkout')}"><a ui-sref="home"><i class="entypo-left-dir" style="padding-right: 10px;"></i>Back</a></li>
+					<li class="hidden" ng-class="{hidden: $state.includes('library'), hide: $state.includes('home')}"><a ui-sref="library"><i class="entypo-left-dir" style="padding-right: 10px;"></i>Back</a></li>
+					<li ng-class="{hidden: $state.includes('library'), hide: $state.includes('checkout')}" id="featured-btn"><a scroll-to="featured">Featured Work</a></li>
+					<li ng-class="{hidden: $state.includes('library'), hide: $state.includes('checkout')}"><a scroll-to="about">About</a></li>
 				</ul>
 				<ul class="navbar-right" style="padding-top:11px">
 					<li ui-sref="checkout" class="cart">

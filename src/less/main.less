@@ -191,6 +191,22 @@ a, a:before {
     transition: background-color 0.15s, color 0.15s, border-color 0.15s, text-shadow 0.15s, opacity 0.15s, left 0.15s;
 }
 
+.badge{
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background:none !important;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+
 .button{
 	display: inline-block;
 	color: white;
@@ -250,6 +266,7 @@ opacity: 0.75 !important;
 	color:#bb52ef;
 	border: thin solid #bb52ef;
 	line-height: 45px;
+  margin-top: 20px;
 }
 
 #checkoutBtn:hover {
@@ -269,9 +286,9 @@ hr {
 }
 
 .tags {
-    padding-left: 7px;
-    padding-right: 7px;
+  display: inline;
 }
+
 .tags li {
     display: inline;
 }
@@ -1462,5 +1479,9 @@ input {
 .fadeInUpOut {
   -webkit-animation-name: fadeInUpOut;
   animation-name: fadeInUpOut;
+}
+
+.hidden{
+  display: none;
 }
 

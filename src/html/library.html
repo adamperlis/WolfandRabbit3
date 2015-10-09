@@ -9,10 +9,12 @@
         <input type="text" class="form-control" ng-model="search.$" placeholder="Search Tracks">
       </div>
 
-      <ul class="tags" ng-repeat="tag in tags | orderBy: 'tag'">
-        <li ng-class="{'active': filtered.indexOf(tag.tag) > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf(tag.tag) > -1}" ng-click="filter(tag.tag)">{{ tag.tag }}</span></a>
-        </li>
-      </ul>
+      <div class="col-lg-12" style="padding-left:30px;">
+        <ul class="tags" ng-repeat="tag in tags | orderBy: 'tag'">
+          <li ng-class="{'active': filtered.indexOf(tag.tag) > -1}"><a class="tag filter" href="#"><span ng-class="{'entypo-cancel': filtered.indexOf(tag.tag) > -1}" ng-click="filter(tag.tag)">{{ tag.tag }}</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
 
 
@@ -37,7 +39,7 @@
 
       <div ng-repeat="track in tracks | filterMultiple:'tags':filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 hidden-xs tracks">
-          <i id="play" ng-click="play()" class="entypo-right-dir"></i>
+          <i id="play" ng-click="play(track)" class="entypo-right-dir"></i>
         </div>
         <div class="col-sm-3 col-xs-3 tracks"><p>{{ track.title }}</p></div>
         <div class="col-sm-2 col-xs-2 tracks"><p>{{ track.artist }}</p></div>
@@ -49,14 +51,7 @@
   </div>
 </div>  
 
-<player>
-  <audio>
-    <source src="{{ track.preview }}" type="audio/mp3">
-    Your browser does not support the audio tag.
-  </audio>
-</player>
-
-
+<player track="currentTrack"></player>
 
 
 <!-- 
