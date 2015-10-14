@@ -21,6 +21,7 @@ var knex = require('knex')({
     charset  : 'utf8'
   }
 });
+var moment = require('moment');
 
 var Tag = require('./models/tag.js')(knex);
 var License = require('./models/license.js')(knex);
@@ -31,10 +32,28 @@ app.set('views', __dirname);
 app.engine('html', ejs.renderFile);
 
 app.get('/download', function(req, res){
-	
-	console.log(req.query)
-  
-	res.download(req.query.file)
+  	if (req.query.file) {
+		res.download(req.query.file)
+	} else if (req.query.code) {
+		new Download({
+			code: req.query.code
+		}).fetch({
+			withRelated: ['track']
+		}).then(function(download) {
+			var track = download.related('track').toJSON();
+			
+			console.log(moment().diff(moment(download.get('created_at')), 'days'))
+			
+			console.log(download.get('created_at'));
+
+			if(moment().diff(moment(download.get('created_at')), 'days') > 30){
+				res.error("Expired");
+			}else{
+				res.download(track.file)
+			}
+			
+		})
+	}
 })
 
 app.use(express.static(__dirname));
@@ -82,43 +101,50 @@ app.post('/charge', function(req, res) {
 			new Download({
 				track_id: req.body.cart.items[i].id,
 				code: randomstring.generate(7)
-			}).save().then(function(model){
-				downloads.push(model);
+			}).save().then(function(download){
 
-				console.log(model.related('track'));
+				new Download({
+					id: download.id
+				}).fetch({
+					withRelated: ['track']
+				}).then(function(download) {
+					var track = download.related('track').toJSON();
+					
+					downloads.push({
+						title: track.title,
+						artist: track.artist,
+						url: "http://wolfandrabbit2.dev/download?code=" + download.get('code')
+					});
 
-				if (downloads.length == req.body.cart.items.length) {
-					// console.log(downloads);
-					console.log('complete, send the damn email');
-					return
-					fs.readFile(__dirname + '/emailTemplate.ejs', 'utf-8', function(err, template) {
+					console.log(downloads);
 
+					if (downloads.length == req.body.cart.items.length) {
+						// console.log(downloads);
+						console.log('complete, send the damn email');
+						
+						fs.readFile(__dirname + '/emailTemplate.ejs', 'utf-8', function(err, template) {
 
-						var compiled = ejs.render(template, {items: downloads})
+							var compiled = ejs.render(template, {items: downloads})
 
-						sendgrid.send({
-						  to:       req.body.email,
-						  from:     'adam.perlis@gmail.com',
-						  subject: 	'Your Wolf & Rabbit Music Download',
-						  cc:       'adam.perlis@gmail.com',
-						  html:     compiled
-						}, function(err, json) {
-						  if (err) { return console.error("SENDGRID: ", err); }
-						  
-						  // console.log(json);
-						});
-					})
+							sendgrid.send({
+							  to:       req.body.email,
+							  from:     'adam.perlis@gmail.com',
+							  subject: 	'Your Wolf & Rabbit Music Download',
+							  cc:       'adam.perlis@gmail.com',
+							  html:     compiled
+							}, function(err, json) {
+							  if (err) { return console.error("SENDGRID: ", err); }
+							  
+							  // console.log(json);
+							});
+						})
 
-					res.end();
-				}
-
+						res.end();
+					}
+				})
 			})
 		}
-
-		
 	});
-
-
 });
 
 //"tok_15p54qIwhXnZzVoeXp4ZzG4F"

@@ -21,6 +21,7 @@
     "gulp-plumber": "^0.6.6",
     "knex": "^0.8.6",
     "lodash": "^3.7.0",
+    "moment": "^2.10.6",
     "mysql": "^2.6.2",
     "randomstring": "^1.0.6",
     "sendgrid": "^1.7.0",

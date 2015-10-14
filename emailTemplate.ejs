@@ -4,7 +4,7 @@
 	<% items.forEach(function(item){ %>
 		<li style="list-style-type: none;"><%= item.title %></li>
 		<li style="list-style-type: none;"><%= item.artist %></li>
-		<li style="list-style-type: none;"><%= item.url %></li>
+		<li style="list-style-type: none;"><a href="<%= item.url %>"><%= item.url %></a></li>
 	<% }) %>
 </ul>
 
