@@ -1,4 +1,4 @@
-module.exports = function($scope, $state, Tracks, $animate, Tags){
+module.exports = function($scope, $state, Tracks, $animate, Tags, Audio){
 	$scope.filtered = [];
 
 	Tracks.getTracks().then(function(tracks){
@@ -11,11 +11,20 @@ module.exports = function($scope, $state, Tracks, $animate, Tags){
 		$scope.tags = tags
 	})
 
-	$scope.play = function(track) {	
-		// console.log(track)	
-		$scope.currentTrack = track
+	$scope.toggleState = function(track) {	
+		Audio.toggleState(track)
 	}
+
+	$scope.playing = Audio.playing
 	
+	Audio.notify.on('played paused', function(e) {
+		if (e == "played") {
+			$scope.playing = Audio.track
+		} else {
+			$scope.playing = null;
+		}
+	})
+
 
 	$scope.filter = function(tag){
 		$scope.$evalAsync(function() {

@@ -1,35 +1,34 @@
-module.exports = function($rootScope, $animate, $timeout) {
+module.exports = function($rootScope, $animate, $timeout, Audio) {
 	return {
 		restrict: 'E',
 		scope: {
 			track: '=',
+			audioCurrentTime: "=audioCurrentTime",
 		},
 		template: require('../html/partials/player.html'),
 		controller:function($scope){
-			var self = this;
 
-			this.setAudioElement = function(e) {
-				self.audioElement = e;
+			$scope.toggleState = function() {
+				Audio.toggleState()
 			}
 
-			this.play = function() {
-				self.audioElement.load()
-				self.audioElement.play()
-				$scope.$evalAsync(function() {
-					$scope.playing = true;				
-				})
-			}
+			$scope.onTimeUpdate = function () {
+                var currTime = self.currentTime;
+                if (currTime - $scope.audioCurrentTime > 0.5 || $scope.audioCurrentTime - currTime > 0.5) {
+                    self.currentTime = $scope.audioCurrentTime;
+                }
+                $scope.$apply(function () {
+                    $scope.audioCurrentTime = self.currentTime;
+                });
+            }
 
-			$scope.pause = function() {
-				console.log('Pause!')
-				self.audioElement.pause()
-				$scope.$evalAsync(function() {
-					$scope.playing = false;
-				});
-			}
 		},
 		link: function(scope, element, attrs, ctrl) {
-			scope.playing = false;
+			Audio.notify.on('played paused', function() {
+				scope.playing = !Audio.audioElement.paused
+				console.log(Audio.track)
+			})
+
 		}
 	}
 }

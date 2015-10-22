@@ -1,16 +1,9 @@
-module.exports = function() {
+module.exports = function(Audio) {
 	return {
 		restrict: 'E',
 		require: '^player',
 		link: function(scope, element, attrs, playerController) {
-			playerController.setAudioElement(element[0])
-
-			scope.$watch('track', function(track) {
-				if (track) {
-					playerController.play();
-				}
-			})
-
+			Audio.setAudioElement(element[0])
 		}
 	}
 }

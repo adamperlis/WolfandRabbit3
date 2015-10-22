@@ -47,7 +47,7 @@ app.get('/download', function(req, res){
 			console.log(download.get('created_at'));
 
 			if(moment().diff(moment(download.get('created_at')), 'days') > 30){
-				res.error("Expired");
+				res.status(401).send('Link Expired');
 			}else{
 				res.download(track.file)
 			}

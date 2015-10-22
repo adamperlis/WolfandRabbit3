@@ -39,7 +39,7 @@
 
       <div ng-repeat="track in tracks | filterMultiple:'tags':filtered | filter:search" class="col-sm-12 mix category-1 animate-repeat" style="display: inline-block;">
         <div class="col-sm-1 hidden-xs tracks">
-          <i id="play" ng-click="play(track)" class="entypo-right-dir"></i>
+          <i class="play" ng-click="toggleState(track)" ng-class="{ 'entypo-pause': track.id == playing.id, 'entypo-play': track.id != playing.id }"></i>
         </div>
         <div class="col-sm-3 col-xs-3 tracks"><p>{{ track.title }}</p></div>
         <div class="col-sm-2 col-xs-2 tracks"><p>{{ track.artist }}</p></div>
@@ -51,7 +51,11 @@
   </div>
 </div>  
 
-<player track="currentTrack"></player>
+<div id="footer" class="">
+    <nav class="navbar navbar-default navbar-fixed-bottom" id="audioplayer">
+      <player audio-current-time="currentTime" track="currentTrack"></player>
+    </nav>
+</div>
 
 
 <!-- 

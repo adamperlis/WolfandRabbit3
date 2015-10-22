@@ -1,5 +1,21 @@
-<span ng-click="pause()" ng-class="{ 'pause': playing, 'play': !playing }">Playing: {{ playing }}</span>
+<div class="navbar-inner navbar-content-center">
+	<audio>
+		<source src="{{ track.streaming }}" type="audio/mp3">
+	</audio>
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 navbar-left">
+	<span ng-click="toggleState()" id="pButton" ng-class="{ 'entypo-pause': playing, 'entypo-play': !playing }"></span>
 
-<audio>
-	<source src="{{ track.streaming }}" type="audio/mp3">
-</audio>
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 player">
+		Playing: {{playing}}
+	  <p>Track Title 3<span> -Artist</span><br><small id="currentTime">{{ currentTime }}</small><small> of </small><small id="duration">0</small></p>
+	  <div id="timeline">    
+	        <div id="playhead"></div>
+	        <div id="playbar"></div>
+	  </div>
+	</div>
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 navbar-right player">
+	 <i class="entypo-basket" id="cart"></i>
+	</div>
+</div>
+
